@@ -21,8 +21,7 @@ var weirdTF = ["She grows multiple breasts", "She grows multiple arms", "She gro
 			   "Her buttcheeks transform into boobs", "Her feet transform into hands", "Her hands transform into feet", "She grows breasts all over her body", "Her nipples turn into pussies",
 			   "She transforms into a humantaur", "She starts filling up with eggs", "She grows another head", "She grows a huge dick", "Her arms and legs turn into tentacles", 
 			   "Her nipples transform into hands", "She grows crotch-boobs", "She transforms into a boobslug", "Her nipples turn into lips", "Her nipples grow long", 
-			   "Her hands and feet turn into boobs", "She turns into a dick", "She transforms into a dorse", "She starts laying eggs from her nipples", "Her mouth transforms into a pussy",
-			   ""];
+			   "Her hands and feet turn into boobs", "She turns into a dick", "She transforms into a dorse", "She starts laying eggs from her nipples", "Her mouth transforms into a pussy"];
 
 var inanimateTF = ["pooltoy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "plushie", "flower", "onahole", "snowman", "doll", "statue", "socks"];
 
