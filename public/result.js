@@ -36,7 +36,7 @@ for(var i=0; i < inanimateTF.length; i++) inanimateTF[i] = "She transforms into 
 
 //Other
 var reaction = ["aroused by", "confused about", "scared of", "shocked by", "terrified of", "embarrassed of", "surprised of", "happy with", "annoyed by", 
-				"excited of", "pissed about", "disappointed in", "nervous about", "amused by", "horny by", "curious with", "interested in", "oblivious of", "angry with"];
+				"excited about", "pissed about", "disappointed in", "nervous about", "amused by", "horny by", "curious with", "interested in", "oblivious of", "angry with"];
 
 var trigger = ["a spell", "a miscast spell", "pissing off a witch", "a curse", "her family curse", "a weird app", "an allergy", "a virus outbreak", 
 			   "some food", "taking in some suppliments", "a bootleg video-game", "a movie", "music", " uh... something?", "touching a old relic", 
@@ -107,7 +107,7 @@ function CreateCharacter()
 
 function Transformation()
 {
-	document.getElementById("TFresult").innerHTML = RandomValue(possibleTFs) + " and she is " + RandomValue(reaction) + " her transformation.\nThe transformation was caused by " + RandomValue(trigger);
+	document.getElementById("TFresult").innerHTML = RandomValue(possibleTFs) + " and she's " + RandomValue(reaction) + " her transformation.\nThe transformation was caused by " + RandomValue(trigger);
 	if (document.getElementById("INCLlocation").checked === true)
 		document.getElementById("TFresult").innerHTML += ", the changes happen " + RandomValue(TFlocation);
 }
