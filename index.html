@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>TF Generator</title>
+  <!--<link rel="stylesheet" href="public/skeleton.css">-->
+  <link rel="stylesheet" href="public/styles.css">
+  <script src="public/result.js"></script>
+
+</head>
+<body>
+    <h1>TF GENERATOR</h1>
+    <small><b>Github</b></small>
+    <!--<div><p id="count"></p></div>-->
+    <hr><br>
+
+    <div class="charbox">
+      <b><p id="charactertitle"></p></b>
+      <p id="CHARresult"></p>
+    </div>
+
+    <br>
+    
+    <div class="tfbox">
+      <b><p id="transformtitle"></p></b>
+      <p id="TFresult"></p>
+    </div>
+
+    <form onsubmit="return false;">
+      <br><b>Create character?</b><br>
+      <input type=checkbox id="rand_char" checked><br><br>
+
+      <!--<b>Gender</b><br>
+      <input type="radio" name="gender" value="Female" id="female" checked> Female
+      <input type="radio" name="gender" value="Male" id="male"> Male
+      <input type="radio" name="gender" value="Other" id="other"> Other<br><br>-->
+
+      <hr><br>
+
+      <b>Types of transformations</b><br>
+      <input type="checkbox" name="tf" value="animal" id="animal" checked> Animal
+      <input type="checkbox" name="tf" value="creature" id="creature" checked> Creature
+      <input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion
+      <input type="checkbox" name="tf" value="weird" id="weird" checked> Weird
+      <input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate<br><br>
+
+      <br><b>Include location?</b><br>
+      <small><i>Can cause weird results</i></small><br>
+      <input type=checkbox id="INCLlocation" checked><br><br>
+
+  	  <button onclick="randomize();AmountOfTFs();" id="tfbutton">Transform!</button>
+    </form>
+
+    <hr>
+
+    <i><p>Contribute to this generator <a href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank">here</a>!</p></i>
+    
+    <footer>
+		  <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 &copy; Unidentified-TF</small></p>
+    </footer>
+</body>
+</html>
