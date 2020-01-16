@@ -27,7 +27,7 @@ var weirdTF = ["She grows multiple breasts", "She grows multiple arms", "She gro
 var inanimateTF = ["pool-toy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "plushie", "flower", "onahole", "snowman", "doll", "statue", "socks",
 				   "cake", "mushroom", "teddy bear", "pillow", "poster", "condom", "chair"];
 
-var otherTF = ["mime", "nerd", "robot"]
+var otherTF = ["mime", "nerd", "robot"];
 
 var possibleTFs = [];
 
@@ -51,7 +51,7 @@ var trigger = ["a spell", "a miscast spell", "pissing off a witch", "her family 
 			   "a doctor who accidentally mixed up the clients", "reading a book", "wearing a costume from a pop-up store", "being caught spying", "a experiment gone wrong",
 			   "being brought back to life after dying", "loosing a game show", "breaking a artifact", "using a off-brand controller", "putting on a mask", "loosing in poker", "a super villain", 
 			   "a teleporting accident", "a voodoo doll", "playing around with a 8-ball", "being hungry", "being transported to another reality", "taking a selfie with a filter", "hitting her 'second' puberty",
-			   "being exposed to radiation", "being drunk", "volunteering", "trying on form fitting clothing", "opening a gift"]
+			   "being exposed to radiation", "being drunk", "volunteering", "trying on form fitting clothing", "opening a gift"];
 
 var TFlocation = ["at a farm", "at home", "in a museum", "in a laboratory", "in the forest", "in a circus", "on the subway", "in the park", "in a classroom", 
 				  "on the beach", "in a theme park", "in a public bathroom", "somewhere in public", "at a party", "on the toilet", 
@@ -84,7 +84,6 @@ function CreateCharacter()
 {
 	if (document.getElementById("rand_char").checked === true)
 	{
-		var characterresultstring =
 		document.getElementById("charactertitle").innerHTML = "Character";
 		var characterresultstring = "Your character is a " + RandomValue(age) + " woman, her body is " + RandomValue(bodytype) + " and she's " + RandomValue(height);
 		return characterresultstring;
@@ -100,7 +99,6 @@ function Transformation()
 {
 	var resultstring = RandomValue(possibleTFs) + ", she is " + RandomValue(reaction) + " her transformation.\nThe transformation was caused by " + RandomValue(trigger);
 	if (document.getElementById("INCLlocation").checked === true) resultstring += " " + RandomValue(TFlocation);
-
 	return resultstring;
 }
 
