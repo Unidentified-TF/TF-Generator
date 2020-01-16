@@ -107,7 +107,7 @@ function CreateCharacter()
 
 function Transformation()
 {
-	document.getElementById("TFresult").innerHTML = RandomValue(possibleTFs) + " and is " + RandomValue(reaction) + " her transformation.\nThe transformation was caused by " + RandomValue(trigger);
+	document.getElementById("TFresult").innerHTML = RandomValue(possibleTFs) + " and she is " + RandomValue(reaction) + " her transformation.\nThe transformation was caused by " + RandomValue(trigger);
 	if (document.getElementById("INCLlocation").checked === true)
 		document.getElementById("TFresult").innerHTML += ", the changes happen " + RandomValue(TFlocation);
 }
