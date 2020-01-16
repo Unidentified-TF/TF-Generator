@@ -8,7 +8,7 @@ body {
   max-width: 50em;
       width: 100%;
 
-  margin: 2em auto 3em auto;
+  margin: 0em auto 0em auto;
   padding: 2em;
   box-shadow: 0 0 5px 1px #e0e0e0;
 }
@@ -26,6 +26,7 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
+
 
 button {
   display: inline-block;
@@ -61,6 +62,9 @@ a:hover {
 }
 
 h1{
+  /*color: black;
+  font-weight: bold;
+  text-decoration: none;*/
   margin: 0px 0px 0px 0px; 
 }
 
@@ -75,3 +79,4 @@ hr{
     margin: 0px 2em 0px 2em; 
 
 }
+
