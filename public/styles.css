@@ -50,6 +50,13 @@ button:hover {
   color: black;
   background: #e0e0e0;
 }
+.copy{
+  font-size: 9px;
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+
+}
 
 a {
   color: #1EAEDB; 
@@ -79,3 +86,4 @@ hr{
     margin: 0px 2em 0px 2em; 
 
 }
+
