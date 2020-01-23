@@ -43,7 +43,7 @@ var reaction = ["aroused by", "confused about", "scared of", "shocked by", "terr
 var trigger = ["a spell", "a miscast spell", "pissing off a witch", "her family curse", "a strange morph app", "her allergy", "a virus outbreak", 
 			   "eating old food", "taking in new suppliments", "playing a bootleg video-game", "watching a movie", "listening to music", "nothing", "breaking something", 
 			   "an experiment", "drinking a new energy drink", "putting on cheap make-up", "playing a mobile game", "an infection she got from a scratch", "her new tattoo", "clicking on a pop-up advertisement", 
-			   "phrasing a wish badly", "excercising", "drinking a spiked drink", "being a asshole", "drinking a old potion", "not coming to work", 
+			   "phrasing a wish badly", "exercising", "drinking a spiked drink", "being a asshole", "drinking a old potion", "not coming to work", 
 			   "having sexual intercourse", "sneezing", "playing a board game", "eating too much", "drinking homebrewed beer from a stranger", "being brainwashed", "trying out a new shampoo brand",
 			   "eating genetically modified food", "loosing a bet", "swimming in a lake", "the full moon", "breaking rules", "failing school", "breaking the law", 
 			   "being in the wrong place at the wrong time", "stepping in toxic waste", "coming across a mischievous genie", "lying to people", "being zapped by aliens", "a mad doctor", 
@@ -57,6 +57,8 @@ var TFlocation = ["at a farm", "at home", "in a museum", "in a laboratory", "in 
 				  "on the beach", "in a theme park", "in a public bathroom", "somewhere in public", "at a party", "on the toilet", 
 				  "at the gym", "in a grocery store", "at a convention", "at a pool", "at work", "in the kitchen", "in her car", "in a elevator",
 				  "in a casino", "at a fancy restaurant", "on her couch", "in her garden", "at a race track", "in her bedroom"];
+
+var THEresults = "";
 
 
 function randomize()
@@ -73,6 +75,7 @@ function randomize()
 
 	document.getElementById("transformtitle").innerHTML = "Transformation";
 	document.getElementById("tfbutton").innerHTML = "Transform again!";
+
 }
 
 function RandomValue(array) 
@@ -109,7 +112,15 @@ function FinalResults()
 	characterresultstring = CreateCharacter();
 
 	document.getElementById("TFresult").innerHTML = Gender(resultstring);
-	document.getElementById("CHARresult").innerHTML = Gender(characterresultstring);
+	if (characterresultstring != null) 
+	{
+		document.getElementById("CHARresult").innerHTML = Gender(characterresultstring);
+		THEresults = "Character:\n" + Gender(characterresultstring) + "\n\nTransformation:\n" + Gender(resultstring);
+	}
+	else
+		THEresults = "Transformation:\n" + Gender(resultstring);
+
+	console.log(THEresults);
 }
 
 function Gender(thestring) {
@@ -139,4 +150,19 @@ function Gender(thestring) {
 		thestring = thestring.replace("they is", "they're");
 	}
 	return thestring + ".";
+}
+
+function copyButt(){
+	copyStringToClipboard(THEresults);
+}
+
+function copyStringToClipboard (str) {
+   var el = document.createElement('textarea');
+   el.value = str;
+   el.setAttribute('readonly', '');
+   el.style = {position: 'absolute', left: '-9999px'};
+   document.body.appendChild(el);
+   el.select();
+   document.execCommand('copy');
+   document.body.removeChild(el);
 }
