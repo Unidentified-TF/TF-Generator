@@ -1,3 +1,7 @@
+//I'm pretty new to JavaScript so don't bully me lol
+
+
+
 //Character
 var age = ["young", "mature", "middle aged"];
 var bodytype = ["a bit chubby", "very athletic", "somewhat athletic", "pretty average", "very curvy", "pretty skinny", "somewhat skinny", "pretty plump", "very pear-shaped", "pretty muscular", "very voluptuous"];
