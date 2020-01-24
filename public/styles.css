@@ -93,4 +93,8 @@ footer{
     box-shadow: none;
     margin-right: -1.4em;
   }
+  .smallhr {
+    margin: 1em 10em 1em 10em; 
+    border-top: 2px solid #cccccc;
+  }
 }
