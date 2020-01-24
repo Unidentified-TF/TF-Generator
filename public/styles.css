@@ -90,8 +90,7 @@ footer{
 
 @media only screen and (max-width:500px) {
   .main {
-    background: white;
     box-shadow: none;
-    margin: 0em -1.4em -2em 0em; 
+    margin-right: -1.4em;
   }
 }
