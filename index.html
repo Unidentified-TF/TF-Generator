@@ -1,13 +1,16 @@
 <html>
+
 <head>
   <title>TF Generator</title>
   <!--<link rel="stylesheet" href="public/skeleton.css">-->
   <link rel="stylesheet" href="public/styles.css">
   <script src="public/result.js"></script>
   <script src="https://kit.fontawesome.com/b9bb4596cb.js" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css?family=Secular+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <div class="main">
     <h1>TF GENERATOR</h1>
     <small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
     <br><br><hr><br>
@@ -24,13 +27,16 @@
       <p id="TFresult"></p>
     </div>
 
-    <br><button id="copybutton" onclick="copyButt();" class="copy"><i class="fas fa-copy"></i> Copy</button>
+    <br><button id="copybutton" onclick="copyButt();" class="copy" style="display:none"><i class="fas fa-copy"></i> Copy</button>
 
     <form onsubmit="return false;">
-      <br><hr><br><b>Create character?</b><br>
-      <input type=checkbox id="rand_char" checked><br><br>
+      <br><hr><br><b>Create character</b><br>
+      <input type=checkbox id="rand_char" checked><br>
+
+      <hr class="smallhr">
 
       <b>Gender</b><br>
+      <hr class="paddhr">
       <input type="radio" name="gender" value="Female" id="female" checked> Female
       <input type="radio" name="gender" value="Male" id="male"> Male
       <input type="radio" name="gender" value="Other" id="other"> Other<br><br>
@@ -38,16 +44,21 @@
       <hr><br>
 
       <b>Types of transformations</b><br>
+      <hr class="paddhr">
       <input type="checkbox" name="tf" value="animal" id="animal" checked> Animal
       <input type="checkbox" name="tf" value="creature" id="creature" checked> Creature
       <input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion
       <input type="checkbox" name="tf" value="weird" id="weird" checked> Weird
       <input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate
-      <input type="checkbox" name="tf" value="other" id="tfother" checked> Other<br><br>
+      <input type="checkbox" name="tf" value="other" id="tfother" checked> Other<br>
 
-      <br><b>Include location?</b><br>
+      <hr class="smallhr">
+
+      <b>Include location</b><br>
       <small><i>Can cause strange results</i></small><br>
-      <input type=checkbox id="INCLlocation" checked><br><br>
+      <input type=checkbox id="INCLlocation" checked><br>
+
+      <hr class="smallhr">
 
   	  <button onclick="FinalResults();" id="tfbutton">Transform!</button>
     </form>
@@ -59,5 +70,6 @@
     <footer>
 		  <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 &copy; Unidentified-TF</small></p>
     </footer>
+  </div>
 </body>
 </html>
