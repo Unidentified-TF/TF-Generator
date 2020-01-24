@@ -5,7 +5,6 @@ body {
   color: #222; 
   text-align: center;
   max-width: 50em;
-      width: 100%;
   margin: 0em auto 0em auto;
   background: #f7f7f7;
 }
@@ -87,4 +86,12 @@ footer{
 .paddhr{
   margin: 0.5em 25em 0.5em 25em; 
   border: 1px solid white;
+}
+
+@media only screen and (max-width:500px) {
+  .main {
+    background: white;
+    box-shadow: none;
+    margin: 0em -1.4em -2em 0em; 
+  }
 }
