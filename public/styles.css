@@ -53,6 +53,12 @@ button:hover {
   line-height: 30px;
 
 }
+.tbutt{
+  bottom: 0px; 
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+}
 a {
   color: #1EAEDB; 
   font-weight: bolder;
