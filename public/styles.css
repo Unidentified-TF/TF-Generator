@@ -4,14 +4,13 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; 
   text-align: center;
-  max-width: 50em;
-  margin: 0em auto 0em auto;
   background: #f7f7f7;
+  max-width: 100%;
 }
 .main{
   background: white;
-  box-shadow: 0 0 5px 1px #e0e0e0;
   padding: 2em;
+  width: auto;
 }
 .charbox {
   background: #f7f7f7;
@@ -67,34 +66,34 @@ h1{
   margin: 0px 0px 0px 0px; 
   font-family:'Secular One';
 }
-header {
-  background: #4d4a4a;
-  margin: 0px -2em -2em -2em; 
-  padding: 2em 0px 2em 0px;
-  color: white;
-}
+
 footer{
   background: #4d4a4a;
   margin: 0px -2em -2em -2em; 
   padding: 2em 0px 2em 0px;
   color: white;
 }
-.smallhr{
-    margin: 1em 23em 1em 23em; 
+.smallhr {
+    width: 15%;
     border-top: 2px solid #cccccc;
 }
 .paddhr{
-  margin: 0.5em 25em 0.5em 25em; 
   border: 1px solid white;
 }
 
-@media only screen and (max-width:500px) {
-  .main {
-    box-shadow: none;
-    margin-right: -1.4em;
+@media screen and (min-width: 48em){
+
+  body{
+    max-width: 50em;
+    margin: 0em auto 0em auto;
   }
-  .smallhr {
-    margin: 1em 10em 1em 10em; 
+  .smallhr{
+    width: 8%;
     border-top: 2px solid #cccccc;
+  }
+  .main{
+    background: white;
+    box-shadow: 0 0 5px 1px #e0e0e0;
+    padding: 2em;
   }
 }
