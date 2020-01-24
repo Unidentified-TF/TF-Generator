@@ -4,15 +4,17 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222; 
   text-align: center;
-
   max-width: 50em;
       width: 100%;
-
   margin: 0em auto 0em auto;
-  padding: 2em;
-  box-shadow: 0 0 5px 1px #e0e0e0;
+  background: #f7f7f7;
 }
-
+.main{
+  background: white;
+  width: 100%;
+  box-shadow: 0 0 5px 1px #e0e0e0;
+  padding: 2em;
+}
 .charbox {
   background: #f7f7f7;
   box-shadow: 0 0 0 1px #e0e0e0;
@@ -26,8 +28,6 @@ body {
   padding: 10px;
   border-radius: 5px;
 }
-
-
 button {
   display: inline-block;
   height: 40px;
@@ -52,12 +52,10 @@ button:hover {
 }
 .copy{
   font-size: 9px;
-  padding: 0 15px;
   height: 30px;
   line-height: 30px;
 
 }
-
 a {
   color: #1EAEDB; 
   font-weight: bolder;
@@ -67,23 +65,27 @@ a:hover {
   color: #0FA0CE; 
   text-decoration: underline;
 }
-
 h1{
-  /*color: black;
-  font-weight: bold;
-  text-decoration: none;*/
   margin: 0px 0px 0px 0px; 
+  font-family:'Secular One';
 }
-
+header {
+  background: #4d4a4a;
+  margin: 0px -2em -2em -2em; 
+  padding: 2em 0px 2em 0px;
+  color: white;
+}
 footer{
   background: #4d4a4a;
   margin: 0px -2em -2em -2em; 
   padding: 2em 0px 2em 0px;
   color: white;
 }
-
-hr{
-    margin: 0px 2em 0px 2em; 
-
+.smallhr{
+    margin: 1em 23em 1em 23em; 
+    border-top: 2px solid #cccccc;
 }
-
+.paddhr{
+  margin: 0.5em 25em 0.5em 25em; 
+  border: 1px solid white;
+}
