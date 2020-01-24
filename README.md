@@ -1,4 +1,7 @@
-# TF-Generator
-Just something I was playing around with, mainly just to learn JavaScript. Might change a few things later on...
+# TF Generator
+Here's a TF generator I made *(mainly to practice JavaScript)*
+Feel free to use and share your results!
 
-Here it is though: https://unidentified-tf.github.io/TF-Generator/
+It's mobile friendly as well!
+
+https://unidentified-tf.github.io/TF-Generator/
