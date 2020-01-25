@@ -59,6 +59,9 @@ button:hover {
   position: sticky;
   bottom: 20px;
 }
+.hitCounter{
+    margin-right: 2.3em;
+}
 a {
   color: #1EAEDB; 
   font-weight: bolder;
