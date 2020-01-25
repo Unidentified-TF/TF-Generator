@@ -14,7 +14,9 @@
 <body>
   <div class="main">
     <h1>TF GENERATOR</h1>
-    <small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
+    <!--<small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>-->
+    <a class="hitCounter" target="_blank" title="Pageviews" data-name="a7d35cea580f841dfc4876e380789c4d|6|page|1|#ffffff|#888888|small|s-hit">Hit Counter</a>
+    <script>document.write("<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v="+Date.now()+"'><\/script>");</script>
     <br><br><hr><br>
 
     <div class="charbox">
@@ -31,46 +33,37 @@
 
     <br><button id="copybutton" onclick="copyButt();" class="copy" style="display:none"><i class="fas fa-copy"></i> Copy</button>
 
-    <form onsubmit="return false;">
-      <br><hr><br><b>Create character</b><br>
-      <input type=checkbox id="rand_char" checked><br>
+    <br><hr><br><b>Create character</b><br>
+    <input type=checkbox id="rand_char" checked><br>
+    <hr class="smallhr">
+    <b>Gender</b><br>
+    <hr class="paddhr">
+    <input type="radio" name="gender" value="Female" id="female" checked> Female
+    <input type="radio" name="gender" value="Male" id="male"> Male
+    <input type="radio" name="gender" value="Other" id="other"> Other<br><br>
+    <hr><br>
+    <b>Types of transformations</b><br>
+    <hr class="paddhr">
+    <input type="checkbox" name="tf" value="animal" id="animal" checked> Animal
+    <input type="checkbox" name="tf" value="creature" id="creature" checked> Creature
+    <input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion
+    <input type="checkbox" name="tf" value="weird" id="weird" checked> Weird
+    <input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate
+    <input type="checkbox" name="tf" value="other" id="tfother" checked> Other<br>
+    <hr class="smallhr">
+    <b>Include location</b><br>
+    <small><i>Can cause strange results</i></small><br>
+    <input type=checkbox id="INCLlocation" checked><br>
+    <hr class="smallhr">
 
-      <hr class="smallhr">
-
-      <b>Gender</b><br>
-      <hr class="paddhr">
-      <input type="radio" name="gender" value="Female" id="female" checked> Female
-      <input type="radio" name="gender" value="Male" id="male"> Male
-      <input type="radio" name="gender" value="Other" id="other"> Other<br><br>
-
-      <hr><br>
-
-      <b>Types of transformations</b><br>
-      <hr class="paddhr">
-      <input type="checkbox" name="tf" value="animal" id="animal" checked> Animal
-      <input type="checkbox" name="tf" value="creature" id="creature" checked> Creature
-      <input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion
-      <input type="checkbox" name="tf" value="weird" id="weird" checked> Weird
-      <input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate
-      <input type="checkbox" name="tf" value="other" id="tfother" checked> Other<br>
-
-      <hr class="smallhr">
-
-      <b>Include location</b><br>
-      <small><i>Can cause strange results</i></small><br>
-      <input type=checkbox id="INCLlocation" checked><br>
-
-      <hr class="smallhr">
-
-  	  <button onclick="FinalResults();" id="tfbutton" class="tbutt">Transform!</button>
-    </form>
+    <button onclick="FinalResults();" id="tfbutton" class="tbutt">Transform!</button>
 
     <br><hr>
 
     <i><p>Contribute to this generator <a href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank">here</a>!</p></i>
     
     <footer>
-		  <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 &copy; Unidentified-TF</small></p><br>
+		  <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 &copy; Unidentified-TF</small></p><br><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
     </footer>
   </div>
 </body>
