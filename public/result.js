@@ -5,6 +5,8 @@ var age = ["young", "mature", "middle aged"];
 var bodytype = ["a bit chubby", "very athletic", "somewhat athletic", "pretty average", "very curvy", "pretty skinny", "somewhat skinny", "pretty plump", "very pear-shaped", "pretty muscular", "very voluptuous"];
 var height = ["quite small", "quite tall", "about average sized"];
 
+var extraMod = ["pregnant ", "chubby ", "lactating ", "futa ", "bimbo ", "multi-breasted ", "giant ", "busty ", " ", " ", " ", " "];
+
 //Transformation types
 var animalTF = ["skunk", "cow", "dog", "wolf", "cat", "tiger", "lion", "horse", "bird", "pig", "shark", "giraffe", "snake", "frog", "donkey", "chicken", "goat", "sheep", 
 				"kangaroo", "elephant", "rat", "mouse", "hyena", "octopus", "panda", "bear", "hippo", "rhino", "snail", "spider", "bee", "crocodile", "bat", "zebra",
@@ -16,18 +18,18 @@ var animalTF = ["skunk", "cow", "dog", "wolf", "cat", "tiger", "lion", "horse", 
 var creatureTF = ["centaur", "dragon", "unicorn", "dinosaur", "succubus", "alien", "elf", "sphinx", "hellhound", "cerberus", "harpy", "hydra", "naga", "gryphon", "pegasus", 
 				  "gargoyle", "goblin", "orc", "chimera", "slime", "cyclops", "mermaid", "dryad", "minotaur", "genie", "fairy", "drider", "chocobo", "goddess", "satyr", "deathclaw"];
 
-var expansionTF = ["She transforms into a bimbo", "She gets pregnant", "Her breasts expand", "Her butt expands", "Her belly expands", "Her pussy expands", 
-				   "Her hair grows", "She grows into a giantess", "She shrinks down", "She unevenly grows bigger", "Her lips expand", "Her feet expand", "Her nipples expand",
-				   "Her tongue expands", "Her hips expand", "She transforms into a busty clown", "Her clit expands"];
+var expansionTF = ["She transforms into a /extra/bimbo", "She gets pregnant", "Her breasts expand", "Her butt expands", "Her belly expands", "Her pussy expands", 
+				   "Her hair grows", "She grows into a /extra/giantess", "She shrinks down", "She unevenly grows bigger", "Her lips expand", "Her feet expand", "Her nipples expand",
+				   "Her tongue expands", "Her hips expand", "She transforms into a /extra/clown", "Her clit expands"];
 
 var weirdTF = ["She grows extra breasts", "She grows extra arms", "She grows extra legs", "She grows extra pussies", "She grows extra eyes", "Her nipples turn into dicks",
 			   "Her buttcheeks transform into boobs", "Her feet transform into hands", "Her hands transform into feet", "She grows breasts all over her body", "Her nipples turn into pussies",
-			   "She transforms into a humantaur", "She starts filling up with eggs", "She grows a extra head", "She grows a huge dick", "Her arms and legs turn into tentacles", 
+			   "She transforms into a /extra/humantaur", "She starts filling up with eggs", "She grows a extra head", "She grows a huge dick", "Her arms and legs turn into tentacles", 
 			   "Her nipples transform into hands", "She grows crotch-boobs", "She transforms into a boobslug", "Her nipples turn into lips", "Her nipples grow long", 
 			   "Her hands and feet turn into boobs", "She turns into a dick", "She transforms into a dorse", "She starts laying eggs from her nipples", "Her mouth transforms into a pussy",
 			   "She gets conjoined with another person", "She fuses with another person", "She transforms into a suckplant", "She transforms into a boob", 
 			   "Her head transforms into a dick, and her breasts fuse together forming a ballsack", "She turns into a dick and fuses with the nearest person", "She grows breasts from her back",
-			   "She splits into two shortstacks", "She grows a cock-tail", "She grows a big dick but instead of balls there are boobs", "Her hair turns into dicks", "Her hair turns into tentacles",
+			   "She splits into two /extra/shortstacks", "She grows a cock-tail", "She grows a big dick but instead of balls there are boobs", "Her hair turns into dicks", "Her hair turns into tentacles",
 			   "She grows multiple dicks", "Her belly button changes into a pussy", "Her nipples turn into taps and her boobs fill up with liquids", "Her nipples turn into tentacles", "She grows an udder"];
 
 var inanimateTF = ["/mod pool-toy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "/mod plushie", "flower", "onahole", "snowman", "doll", "statue",
@@ -42,10 +44,10 @@ var possibleMods = [];
 possibleMods = animalTF.concat(creatureTF);
 
 //Adds text infront of selected arrays when running to reduce text when editing
-for(var i=0; i < animalTF.length; i++) animalTF[i] = "She transforms into a " + animalTF[i];
-for(var i=0; i < creatureTF.length; i++) creatureTF[i] = "She transforms into a " + creatureTF[i];
+for(var i=0; i < animalTF.length; i++) animalTF[i] = "She transforms into a /extra/" + animalTF[i];
+for(var i=0; i < creatureTF.length; i++) creatureTF[i] = "She transforms into a /extra/" + creatureTF[i];
 for(var i=0; i < inanimateTF.length; i++) inanimateTF[i] = "She transforms into a " + inanimateTF[i];
-for(var i=0; i < otherTF.length; i++) otherTF[i] = "She transforms into a " + otherTF[i];
+for(var i=0; i < otherTF.length; i++) otherTF[i] = "She transforms into a /extra/" + otherTF[i];
 
 //How the character reacts
 var reaction = ["aroused by", "confused about", "scared of", "shocked by", "terrified of", "embarrassed of", "surprised by", "happy with", "annoyed by", 
@@ -142,6 +144,10 @@ function Transformation()
 	}
 
 	resultstring = resultstring.replace("/mod", RandomValue(possibleMods));
+	if (document.getElementById("INCLextra").checked === true)
+		resultstring = resultstring.replace("/extra/", RandomValue(extraMod));
+	else
+		resultstring = resultstring.replace("/extra/", " ");
 
 	return resultstring;
 }
