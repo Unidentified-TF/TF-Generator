@@ -30,14 +30,16 @@ var weirdTF = ["She grows extra breasts", "She grows extra arms", "She grows ext
 			   "She splits into two shortstacks", "She grows a cock-tail", "She grows a big dick but instead of balls there are boobs", "Her hair turns into dicks", "Her hair turns into tentacles",
 			   "She grows multiple dicks", "Her belly button changes into a pussy", "Her nipples turn into taps and her boobs fill up with liquids", "Her nipples turn into tentacles", "She grows an udder"];
 
-var inanimateTF = ["pool-toy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "plushie", "flower", "onahole", "snowman", "doll", "statue",
+var inanimateTF = ["/mod pool-toy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "/mod plushie", "flower", "onahole", "snowman", "doll", "statue",
 				   "cake", "mushroom", "teddy bear", "pillow", "poster", "condom", "chair", "bra", "dildo", "cum", "car", "fountain", "mannequin", "candle", "pinata", 
-				   "costume", "chess piece", "candy", "chocolate", "taxidermy head mount", "suit of themselves"];
+				   "/mod costume", "chess piece", "candy", "chocolate", "/mod taxidermy head mount", "suit of themselves"];
 
 var otherTF = ["mime", "nerd", "robot", "drag queen", "MILF", "femboi"];
 
 //Stores all transformations the user has chosen
 var possibleTFs = [];
+var possibleMods = [];
+possibleMods = animalTF.concat(creatureTF);
 
 //Adds text infront of selected arrays when running to reduce text when editing
 for(var i=0; i < animalTF.length; i++) animalTF[i] = "She transforms into a " + animalTF[i];
@@ -55,25 +57,26 @@ var trigger = ["accidentally messing up a spell", "pissing off a witch", "their 
 			   "an experiment", "drinking a new energy drink", "putting on cheap make-up", "playing a mobile game", "an infection she got from a scratch", "getting a new tattoo", "clicking on a pop-up advertisement", 
 			   "phrasing a wish poorly", "exercising", "drinking a spiked drink", "being an asshole", "drinking a old potion", "not coming to work/end", "activating a trap in a tomb/end",
 			   "having sex", "sneezing", "playing a board game", "eating too much", "drinking homebrewed beer from a stranger", "being brainwashed", "trying out a new shampoo brand/end",
-			   "eating genetically modified food", "loosing a bet", "drinking dirty water", "the full moon", "breaking rules", "breaking the law and facing the consequences/end", "swimming in lake water/end",
+			   "eating genetically modified food", "loosing a bet", "drinking dirty water", "being exposed to the full moon", "breaking rules", "breaking the law and facing the consequences/end", "swimming in lake water/end",
 			   "being in the wrong place at the wrong time/end", "stepping in toxic waste", "coming across a mischievous genie", "lying to people", "being zapped by aliens", "a mad doctor looking for his next victim/end", 
 			   "stepping into toxic waste", "looting cursed treasure", "using a VR headset", "being pressed into a body shaping mold", "getting a free massage", "eating a strange plant on a space expedition/end",
 			   "a doctor who accidentally mixed up his clients/end", "reading a book", "wearing a costume she bought from a pop-up store", "being caught spying on a witch", "an experiment gone wrong",
-			   "being brought back to life after dying", "loosing in a game show/end", "breaking a artifact", "playing with a knock-off gameboy", "putting on a mask", "loosing a game of poker in a casino/end", "trying to stop a super-villain", 
-			   "being the first subject to test a teleporter/end", "someone modifying a voodoo doll of them", "playing around with a 8-ball", "being hungry", "being transported to another reality/end", "taking a selfie with a filter", "hitting a 'second' puberty",
+			   "waking up from a coma", "loosing in a game show/end", "breaking a artifact", "playing with a knock-off gameboy", "putting on a mask", "loosing a game of poker in a casino/end", "trying to stop a super-villain", 
+			   "testing a teleporter/end", "someone modifying a voodoo doll of them", "playing around with a 8-ball", "being hungry", "being transported to another reality/end", "taking a selfie with a filter", "hitting a 'second' puberty",
 			   "being exposed to radiation", "being drunk", "volunteering", "putting on form-fitting clothing", "opening a gift", "having a orgasm", "masturbating", "walking into a cursed dungeon and getting locked until the changes are over/end",
 			   "getting a new job and needing to fit their standards/end", "opening spam email", "voulnteering at a magic show/end", "being bit by a weirdo", "being late to work/end",
 			   "reading some old book", "angering an old woman", "drinking a limited edition latte", "winning the lottery", "vandalizing", "drinking too much", "doing drugs", "testing drugs for money",
 			   "walking through a mirror", "looking at a funhouse mirror", "joining the circus/end", "pissing of a demon", "not following Unidentified-TF/end", "being sucked into a video-game",
 			   "their teacher punishing them for bad grades/end", "a backfired prank", "their body adapting to the surroundings", "thinking of it", "being possessed by a spirit", "being curious about how it would feel like,", "wishing for a new life",
 			   "a mischievous god", "being annoying", "stealing", "creating a character in a video-game", "cheating on their significant other", "dating a witch/end", "being struck by a lightning/end",
-			   "being sucked into a black hole, and then spit back/end", "getting piercings", "using new sex-toys", "salesman who knocked on their door to showcase his products/end", "going into the sewers/end", "using experimental pills",
+			   "being sucked into a black hole, and then spit back/end", "getting piercings", "using new sex-toys", "salesman showcasing his products/end", "going into the sewers/end", "using experimental pills",
 			   "trying to prove magic isn't real", "kissing someone", "having a bad hygiene", "playing with a magic remote", "cosplaying", "breaking a magic wand", "using a knock-off sexdoll",
 			   "messing up a ritual", "putting on magic clothing", "looking at transformation art", "watching porn", "being hypnotized", "wishing life was a bit more interesting", "a contamination on a space station/end",
 			   "eating fruits", "being splashed with water", "being exposed to toxic gas", "voulnteering to be a 'test rat' for DNA experimenting/end", "wanting fit in with the 'cool' people", 
 			   "being accused of being a witch", "using sunscreen from an unknown company", "fantasizing about it", "blackmailing someone", "someone sneezing at them", "getting a random DM asking about roleplaying",
 			   "getting pranked by their geneticist friend", "making a wish at a fortune telling machine/end", "a wish, and apparently everyone thinks she's normal and has been this way since birth../end", 
-			   "sneaking into a lab and accidentally breaking vials that released toxic fumes/end"];
+			   "sneaking into a lab and accidentally breaking vials that released toxic fumes/end", "getting a vaccination/end", "using a unfinished teleporter at a laboratory/end", "being confused which one was the transformation-pod and which one was the cryo-pod/end",
+			   "walking through a portal that mysteriously opened up", "injecting themselves with experimental nanobots that were only supposed to improve their health", "being kidnapped by a mad doctor and being used as their 'test rat'/end"];
 
 //Where the transformation occurs 
 var TFlocation = ["at a farm", "at home", "in a museum", "in a laboratory", "while walking in a forest", "in a circus", "on the subway", "in the park", "in class", 
@@ -137,6 +140,9 @@ function Transformation()
 	if (temp_trigg.substr(temp_trigg.length - 4) != "/end") {
 		if (document.getElementById("INCLlocation").checked === true) resultstring += " " + RandomValue(TFlocation);
 	}
+
+	resultstring = resultstring.replace("/mod", RandomValue(possibleMods));
+
 	return resultstring;
 }
 
@@ -186,6 +192,11 @@ function Gender(thestring) {
 	{
 		thestring = thestring.replace("they's", "they're");
 		thestring = thestring.replace("they is", "they're");
+		thestring = thestring.replace("grows", "grow");
+		thestring = thestring.replace("starts", "start");
+		thestring = thestring.replace("shrinks", "shrink");
+		thestring = thestring.replace("turns", "turn");
+
 	}
 	return thestring + ".";
 }
