@@ -50,7 +50,7 @@ for(var i=0; i < inanimateTF.length; i++) inanimateTF[i] = "She transforms into 
 for(var i=0; i < otherTF.length; i++) otherTF[i] = "She transforms into a /extra/" + otherTF[i];
 
 //How the character reacts
-var reaction = ["aroused by", "confused about", "scared of", "shocked by", "terrified of", "embarrassed of", "surprised by", "happy with", "annoyed by", 
+var reaction = ["aroused by", "confused about", "scared of", "shocked by", "terrified of", "embarrassed by", "surprised by", "happy with", "annoyed by", 
 				"excited about", "pissed about", "disappointed in", "nervous about", "amused by", "curious about", "very interested in", "oblivious of", "angry with"];
 
 //How the transformation is triggered
