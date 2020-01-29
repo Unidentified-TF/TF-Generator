@@ -32,11 +32,12 @@ var weirdTF = ["She grows multiple breasts", "She grows extra arms", "She grows 
 			   "Her buttcheeks transform into boobs", "Her feet transform into hands", "Her hands transform into feet", "She grows breasts all over her body", "Her nipples turn into pussies",
 			   "She transforms into a /extra/humantaur", "She starts filling up with eggs", "She grows a extra head", "She grows a huge dick", "Her arms and legs turn into tentacles", 
 			   "Her nipples transform into hands", "She grows crotch-boobs", "She transforms into a boobslug", "Her nipples turn into lips", "Her nipples grow long", 
-			   "Her hands and feet turn into boobs", "She turns into a dick", "She transforms into a dorse", "She starts laying eggs from her nipples", "Her mouth transforms into a pussy",
+			   "Her hands and feet turn into boobs", "She transforms into a dick", "She transforms into a dorse", "She starts laying eggs from her nipples", "Her mouth transforms into a pussy",
 			   "She gets conjoined with another person", "She fuses with another person", "She transforms into a suckplant", "She transforms into a boob", 
-			   "Her head transforms into a dick, and her breasts fuse together forming a ballsack", "She turns into a dick and fuses with the nearest person", "She grows breasts from her back",
+			   "Her head transforms into a dick, and her breasts fuse together forming a ballsack", "She transforms into a dick and fuses with the nearest person", "She grows breasts on her back",
 			   "She splits into two /extra/shortstacks", "She grows a cock-tail", "She grows a big dick but instead of balls there are boobs", "Her hair turns into dicks", "Her hair turns into tentacles",
-			   "She grows multiple dicks", "Her belly button changes into a pussy", "Her nipples turn into taps and her boobs fill up with liquids", "Her nipples turn into tentacles", "She grows an udder"];
+			   "She grows multiple dicks", "Her belly button changes into a pussy", "Her nipples turn into taps and her boobs fill up with liquids", "Her nipples turn into tentacles", "She grows an udder",
+			   "Her tongue transforms into a dick", "Her eyes extrude from her face and turn into eyestalks", "Her neck extends", "Her fingers turn into dicks", "She grows dicks all over her body"];
 
 var inanimateTF = ["/mod pool-toy", "pumpkin", "toy-soldier", "panties", "sexdoll", "tree", "mousepad", "/mod plushie", "flower", "onahole", "snowman", "doll", "statue",
 				   "cake", "mushroom", "teddy bear", "pillow", "poster", "condom", "chair", "bra", "dildo", "cum-filled condom", "car", "fountain", "mannequin", "candle", "pinata", 
@@ -73,7 +74,7 @@ var trigger = ["accidentally messing up a spell", "pissing off a witch", "their 
 			   "testing a teleporter/end", "someone modifying a voodoo doll of them", "playing around with a 8-ball", "being hungry", "being transported to another reality/end", "taking a selfie with a filter", "hitting a 'second' puberty",
 			   "being exposed to radiation", "being drunk", "volunteering", "putting on form-fitting clothing", "opening a gift", "having a orgasm", "masturbating", "being locked in a dungeon/end",
 			   "getting a new job and needing to fit their standards/end", "opening spam email", "volunteering at a magic show/end", "being bit by a weirdo", "being late to work/end",
-			   "reading some old book", "angering an old woman", "drinking a limited edition latte", "winning the lottery/end", "vandalizing", "drinking too much", "doing drugs", "testing drugs for money",
+			   "reading some old book", "angering an old woman", "drinking a limited edition latte", "winning the lottery/end", "vandalizing", "drinking some weird beer", "doing drugs", "testing drugs for money",
 			   "walking through a mirror", "looking at a funhouse mirror", "joining the circus/end", "pissing of a demon", "not following Unidentified-TF/end", "being sucked into a video-game",
 			   "their teacher punishing them for bad grades/end", "a backfired prank", "their body adapting to the surroundings", "thinking of it", "being possessed by a spirit", "being curious about how it would feel like,", "wishing for a new life",
 			   "a mischievous god", "being annoying", "stealing", "creating a character in a video-game", "cheating on their significant other", "dating a witch/end", "being struck by a lightning/end",
@@ -85,14 +86,15 @@ var trigger = ["accidentally messing up a spell", "pissing off a witch", "their 
 			   "getting pranked by their geneticist friend", "making a wish at a fortune telling machine/end", "a wish, and apparently everyone thinks this is normal and they've been this way since birth../end", 
 			   "sneaking into a lab and accidentally breaking vials that released toxic fumes/end", "getting a vaccination/end", "using a unfinished teleporter at a laboratory/end", "being confused between a transformation-pod and a cryo-pod/end",
 			   "walking through a portal that mysteriously opened up", "injecting themselves with experimental nanobots that were only supposed to improve their health", "being kidnapped by a mad doctor and being used as their 'test rat'/end",
-			   "using essential oils", "using this generator"];
+			   "using essential oils", "using this generator", "putting on a cursed necklace", "touching old bones while on a excavation/end"];
 
 //Where the transformation occurs 
 var TFlocation = ["at a farm", "at home", "in a museum", "in a laboratory", "while walking in a forest", "in a circus", "on the subway", "in the park", "in class", 
 				  "on the beach", "in a theme park", "in a public bathroom", "in public", "at a party", "while on the toilet", "while camping", "at a family reunion",
 				  "at the gym", "in a grocery store", "at a convention", "at a pool", "at work", "in the kitchen", "in a elevator", "at a magic show", "in a factory",
 				  "in a casino", "while eating at a fancy restaurant", "while sunbathing", "in their bedroom", "in a back alley", "at a fair", "on a plane", "on a train", "in a car",
-				  "at the city square", "at a bar", "in a church", "in a coffee shop", "in the woods", "at the zoo", "at the doctor's office", "at an arcade"];
+				  "at the city square", "at a bar", "in a church", "in a coffee shop", "in the woods", "at the zoo", "at the doctor's office", "at an arcade", "while taking a shower",
+				  "in the middle of a meeting"];
 
 //var reversal = ["is permanent!", "lasts for a month, but if she has sex... it'll become permanent", "lasts for 24 hours"]
 
