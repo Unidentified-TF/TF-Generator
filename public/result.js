@@ -92,7 +92,7 @@ var trigger = ["accidentally messing up a spell", "pissing off a witch", "their 
 			   "being in the wrong place at the wrong time/end", "stepping in toxic waste", "coming across a mischievous genie", "lying to people", "being zapped by aliens", "being kidnapped by a mad-doctor/end", 
 			   "stepping into toxic waste", "looting cursed treasure", "using a VR headset", "being pressed into a body shaping mold", "getting a free massage", "eating a strange plant on a space expedition/end",
 			   "a doctor who accidentally mixed up their clients/end", "reading a book", "wearing a costume they bought from a pop-up store/end", "being caught spying on a witch", "an experiment gone wrong",
-			   "waking up from a coma", "loosing in a game show/end", "breaking a artifact", "playing with a knock-off gameboy", "putting on a mask", "loosing a game of poker in a casino/end", "trying to stop a super-villain", 
+			   "waking up from a coma", "losing a game show/end", "breaking a artifact", "playing with a knock-off gameboy", "putting on a mask", "loosing a game of poker in a casino/end", "trying to stop a super-villain", 
 			   "testing a teleporter/end", "someone modifying a voodoo doll of them", "playing around with a 8-ball", "being hungry", "being transported to another reality/end", "taking a selfie with a filter", "hitting a 'second' puberty",
 			   "being exposed to radiation", "being drunk", "volunteering", "putting on form-fitting clothing", "opening a gift", "having a orgasm", "masturbating", "being locked in a dungeon/end",
 			   "needing to fit their new job's standards/end", "opening spam email", "volunteering at a magic show/end", "being bit by a weirdo", "being late to work/end",
