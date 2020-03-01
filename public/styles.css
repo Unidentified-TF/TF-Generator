@@ -1,3 +1,6 @@
+html {
+  overflow-y: scroll;
+}
 body {
   line-height: 1.6;
   font-weight: 400;
@@ -6,6 +9,7 @@ body {
   text-align: center;
   background: #f0f0f0;
   max-width: 100%;
+  height: 100%;
 }
 .main{
   background: white;
@@ -86,6 +90,11 @@ footer{
 .paddhr{
   border: 1px solid white;
 }
+label{
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .collapsible {
   background-color: #e8e8e8;
@@ -135,10 +144,10 @@ footer{
 .column .paddhr{
   border: 1px solid #f7f7f7;
 }
-label{
+.fancy-checkbox{
   position: absolute;
-    top: 30px;
-    right: 20px;
+  top: 30px;
+  right: 20px;
 }
 .fancy-checkbox input[type="checkbox"],
 .fancy-checkbox .checked {
@@ -152,6 +161,10 @@ label{
 .fancy-checkbox input[type="checkbox"]:checked ~ .unchecked
 {
     display: none;
+}
+.sidenote{
+    color: #1EAEDB;
+    font-weight: bold;
 }
 
 
