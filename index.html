@@ -5,10 +5,11 @@
   <!--<link rel="stylesheet" href="public/skeleton.css">-->
   <link rel="stylesheet" href="public/styles.css">
   <script src="public/result.js"></script>
+  <script src="public/values.js"></script>
   <script src="https://kit.fontawesome.com/b9bb4596cb.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Secular+One&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel='icon' href='public/icon.png' type='image/x-icon'/ >
 </head>
 
 <body>
@@ -51,7 +52,7 @@
     <div class="content">
       <div class="column">
         <br><b>Create character</b><br>
-        <input type=checkbox id="rand_char" checked><small><i> Creates a random character</i></small>
+        <label><input type=checkbox id="rand_char" checked><small><i> Creates a random character</i></small></label>
         <hr class="paddhr">
 
         <b>Character name</b><br>
@@ -60,9 +61,9 @@
       
       <div class="column">
         <br><b>Gender</b><br>
-        <input type="radio" name="gender" value="Female" id="female" checked> Female<br>
-        <input type="radio" name="gender" value="Male" id="male"> Male<br>
-        <input type="radio" name="gender" value="Other" id="other" title="Can cause broken results"> Other<br><br>
+        <label><input type="radio" name="gender" value="Female" id="female" checked> Female</label><br>
+        <label><input type="radio" name="gender" value="Male" id="male"> Male</label><br>
+        <label><input type="radio" name="gender" value="Other" id="other" title="Can cause broken results"> Other</label><br><br>
       </div>
     </div>
 
@@ -72,32 +73,39 @@
     <div class="content">
       <div class="column">
         <br><b>Types of transformations</b><br>
-        <input type="checkbox" name="tf" value="animal" id="animal" checked> Animal<br>
-        <input type="checkbox" name="tf" value="creature" id="creature" checked> Creature<br>
-        <input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion<br>
-        <input type="checkbox" name="tf" value="tg" id="tg" checked> TG<br>
-        <input type="checkbox" name="tf" value="weird" id="weird" checked> Weird<br>
-        <input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate<br>
-        <input type="checkbox" name="tf" value="other" id="tfother" checked> Other<br>
+        <label><input type="checkbox" name="tf" value="animal" id="animal" checked> Animal</label><br>
+        <label><input type="checkbox" name="tf" value="creature" id="creature" checked> Creature</label><br>
+        <label><input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion</label><br>
+        <label><input type="checkbox" name="tf" value="tg" id="tg" checked> TG</label><br>
+        <label><input type="checkbox" name="tf" value="weird" id="weird" checked> Body mod / Weird</label><br>
+        <label><input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate</label><br>
+        <label><input type="checkbox" name="tf" value="tffood" id="tffood" checked> Food</label><br>
+        <label><input type="checkbox" name="tf" value="plant" id="plant" checked> Plant</label><br>
+        <label><input type="checkbox" name="tf" value="other" id="tfother" checked> Other</label><br>
       </div>
   
       <div class="column">
         <br><b>Include location</b><br>
-        <input type=checkbox id="INCLlocation" checked><small><i> Can cause strange results</i></small>
+        <label><input type=checkbox id="INCLlocation" checked><small><i> Where they transform</i></small></label>
         <hr class="paddhr">
 
         <b>Include time/fate</b><br>
-        <input type=checkbox id="time-fate" checked><small><i> (e.g. permanent, temporary and etc)</i></small>
+        <label><input type=checkbox id="time-fate" checked><small><i> (e.g. permanent, temporary and etc)</i></small></label>
         <hr class="paddhr">
     
         <b>Extra effect</b><br>
-        <input type=checkbox id="INCLextra"><small><i> (e.g. pregnant, giant and etc)</i></small><br><br>
+        <label><input type=checkbox id="INCLextra"><small><i> (e.g. pregnant, giant and etc)</i></small></label>
+        <hr class="paddhr">
+
+        <b>Mental changes</b> - <small class="sidenote"><i>(experimental)</i></small><br>
+        <label><input type=checkbox id="mental"><small><i> Changes how the person thinks</i></small></label>
+        <br><br>
       </div>
     </div>
     
     <hr class="smallhr">
 
-    <button onclick="FinalResults();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
+    <button onclick="createResults();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
 
     <br><hr>
 
@@ -110,7 +118,7 @@
     <i><p>Contribute and give feedback <a href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank">here</a>!</p></i>
     
     <footer>
-      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 - Unidentified-TF</small></p><br><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
+      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>16. Jan, 2020 - Unidentified-TF</small></p><br><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
     </footer>
     
     <!--<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator">Share</a>-->
