@@ -14,10 +14,12 @@
 
 <body>
   <div class="main">
-    <h1>- TF GENERATOR -</h1>
-    <a class="hitCounter" target="_blank" title="Pageviews" data-name="a7d35cea580f841dfc4876e380789c4d|6|page|1|#ffffff|#888888|small|s-hit">Hit Counter</a>
+    <header>
+    <h1>TF GENERATOR</h1>
+    <a class="hitCounter" target="_blank" title="Pageviews" data-name="a7d35cea580f841dfc4876e380789c4d|6|page|1|#ffffff|#1EAEDB|small|s-hit">Hit Counter</a>
     <script>document.write("<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v="+Date.now()+"'><\/script>");</script>
     <br><br><hr><br>
+    </header>
 
     <div class="charbox">
       <b><p id="charactertitle"></p></b>
@@ -76,49 +78,51 @@
         <label><input type="checkbox" name="tf" value="animal" id="animal" checked> Animal</label><br>
         <label><input type="checkbox" name="tf" value="creature" id="creature" checked> Creature</label><br>
         <label><input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion</label><br>
-        <label><input type="checkbox" name="tf" value="tg" id="tg" checked> TG</label><br>
+        <label><input type="checkbox" name="tf" value="tg" id="tg" checked> TG*</label><br>
         <label><input type="checkbox" name="tf" value="weird" id="weird" checked> Body mod / Weird</label><br>
         <label><input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate</label><br>
         <label><input type="checkbox" name="tf" value="tffood" id="tffood" checked> Food</label><br>
         <label><input type="checkbox" name="tf" value="plant" id="plant" checked> Plant</label><br>
+        <label><input type="checkbox" name="tf" value="tfage" id="tfage" checked> Age</label><br>
+        <label><input type="checkbox" name="tf" value="tfpok" id="tfpok" checked> Pokémon / Digimon</label><br>
         <label><input type="checkbox" name="tf" value="other" id="tfother" checked> Other</label><br>
       </div>
   
       <div class="column">
         <br><b>Include location</b><br>
-        <label><input type=checkbox id="INCLlocation" checked><small><i> Where they transform</i></small></label>
+        <label><input type=checkbox id="INCLlocation" checked><small><i> Place of transformation</i></small></label>
         <hr class="paddhr">
 
-        <b>Include time/fate</b><br>
+        <b>Include fate</b><br>
         <label><input type=checkbox id="time-fate" checked><small><i> (e.g. permanent, temporary and etc)</i></small></label>
         <hr class="paddhr">
     
         <b>Extra effect</b><br>
-        <label><input type=checkbox id="INCLextra"><small><i> (e.g. pregnant, giant and etc)</i></small></label>
+        <label><input type=checkbox id="INCLextra" checked><small><i> (e.g. pregnant, giant and etc)</i></small></label>
         <hr class="paddhr">
 
-        <b>Mental changes</b> - <small class="sidenote"><i>(experimental)</i></small><br>
-        <label><input type=checkbox id="mental"><small><i> Changes how the person thinks</i></small></label>
+        <b>Mental / world changes</b> <!--- <small class="sidenote"><i>(experimental)</i></small>--><br>
+        <label><input type=checkbox id="mental" checked><small><i> Alters the world or your mind</i></small></label>
         <br><br>
       </div>
     </div>
     
-    <hr class="smallhr">
+    <hr class="smallhr nonMob">
 
-    <button onclick="createResults();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
+    <button onclick="CreateResults();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
 
     <br><hr>
 
-    <p>Do you need ideas/prompts for art, writing, RP? ...or whatever you're doing?<br>
-    Well then you have come to the right place! Just click "transform!" and you're good to go!<br>
-    If you're feeling a bit picky or just want to experiment then just open the settings and go wild!</p>
+    <p>Looking for ideas? Just want to brainstorm, or merely looking for some fun?<br>Then you're at the right place!<br><br>
+       Results can be altered in settings, so if you're feeling a bit picky or just want to experiment then go wild!</p>
 
     <hr class="smallhr">
     
     <i><p>Contribute and give feedback <a href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank">here</a>!</p></i>
-    
+
     <footer>
-      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>16. Jan, 2020 - Unidentified-TF</small></p><br><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
+      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 - Unidentified-TF</small></p><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
+      <p><a class="discordbot" href="https://discord.com/oauth2/authorize?client_id=705577850442481756&scope=bot&permissions=84992"><i class="fab fa-discord" style="font-size: 18px;"></i><b>  Invite to your server!</b></a></p><br>
     </footer>
     
     <!--<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator">Share</a>-->
