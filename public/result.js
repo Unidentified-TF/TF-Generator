@@ -65,7 +65,7 @@ function Transformation() {
 	TFresult = TFresult.replace("/noFate", function(v){ altB = true; noFate = true; return ""; })
 
 	//Mental/world altering
-	if(document.getElementById("mental").checked)       { if (Math.floor(Math.random() * 5) === 1) TFresult += "<br><i><s>" + RandomValue(altering) + "</s></i>."; }
+	if(document.getElementById("mental").checked)       { if (Math.floor(Math.random() * 5) === 1) TFresult += "<br><i><b>" + RandomValue(altering) + "</b></i>."; }
 
 	//Adds location if it's not a alt start
 	if(document.getElementById("INCLlocation").checked) { if (!altB) TFresult += "<br>" + addTrigger() + "."; } else TFresult = TFresult.slice(0, -1) + ".";
@@ -91,7 +91,9 @@ function Transformation() {
 	if (sound[0] != null && sound[0] != "" && isSound && Math.floor(Math.random() * 2) === 1) {if (Math.floor(Math.random() * 3) === 1) TFresult += "<br><br>Your speech is now frequently interrupted by " + sound[0] + "."; else TFresult += "<br><br>You can no longer speak, only " + sound[0].slice(0, -3) + ".";}
 	
 	//if(TFresult.includes("/extraFix/")) { for (i = 0; i < 2; i++) {TFresult = TFresult.replace("/extraFix/", ""); } if (gender == "MTF") { TFresult = TFresult.replace("/extra/", RandomValue(TGextras[2])); TFresult = TFresult.replace("/gender/", ""); } else if (gender == "FTM") { TFresult = TFresult.replace("/extra/", RandomValue(TGextras[3])); TFresult = TFresult.replace("/gender/", ""); } else extraMod = allMod; }
-	if(TFresult.includes("/extraFix/")){for(i=0;i<2;i++)TFresult=TFresult.replace("/extraFix/","");"MTF"==gender||"FEM"==startgender&&""==gender?(TFresult=TFresult.replace("/extra/",RandomValue(TGextras[2])),TFresult=TFresult.replace("/gender/","")):"FTM"==gender||"MALE"==startgender&&""==gender?(TFresult=TFresult.replace("/extra/",RandomValue(TGextras[3])),TFresult=TFresult.replace("/gender/","")):extraMod=allMod}
+	//if(TFresult.includes("/extraFix/")){for(i=0;i<2;i++)TFresult=TFresult.replace("/extraFix/","");"MTF"==gender||"FEM"==startgender&&""==gender?(TFresult=TFresult.replace("/extra/",RandomValue(TGextras[2])),TFresult=TFresult.replace("/gender/","")):"FTM"==gender||"MALE"==startgender&&""==gender?(TFresult=TFresult.replace("/extra/",RandomValue(TGextras[3])),TFresult=TFresult.replace("/gender/","")):extraMod=allMod}
+	if(TFresult.includes("/extraFix/")) { let fill = [RandomValue(TGextras[2]), RandomValue(TGextras[3])]; if(!document.getElementById("INCLextra").checked) {fill[0] = ""; fill[1] = ""; } for(i=0;i<2;i++) { TFresult = TFresult.replace("/extraFix/", ""); } if (gender === "MTF" || (startgender === "FEM" && gender === "")) { TFresult = TFresult.replace("/extra/", fill[0]); TFresult = TFresult.replace("/gender/", ""); } if (gender === "FTM" || (startgender === "MALE" && gender === "")) { TFresult = TFresult.replace("/extra/", fill[1]); TFresult = TFresult.replace("/gender/", ""); } else extraMod = allMod; }
+
 	if (gender == "FTM") TFresult = TFresult.replace("/gender/", "male "); else if (gender == "MTF") TFresult = TFresult.replace("/gender/", "female "); else TFresult = TFresult.replace("/gender/", "");
 
 	if (document.getElementById("INCLextra").checked) TFresult = TFresult.replace("/extra/", RandomValue(extraMod)); else TFresult = TFresult.replace("/extra/", "");
