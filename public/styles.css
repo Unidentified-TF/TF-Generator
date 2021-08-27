@@ -1,3 +1,49 @@
+:root{
+  --main-color: white;
+  --accent-color: #1d9ed1;
+  --accent-color-two: #218eb9;
+  --text-color: #222; 
+  --background: #efefef;
+  --background-accent: #e8e8e8;
+  --container: #f7f7f7;
+  --container-outline: #d6d6d6;
+  --main-shadow: #d3d3d3; /*--main-shadow: #e0e0e0;*/
+  --lines: #cccccc;
+  --locks: gray;
+  --link-hover: #0FA0CE; 
+  --historycontainer: white;
+
+  --collapsible: #e2e2e2; /*--collapsible: #e9e9e9;*/
+  --collapsible-hover: #ccc;
+  --collapsible-text: rgb(44, 44, 44);
+  --collapsible-text-hover: black;
+
+}
+.dark-theme{
+  --main-color: #353744;
+  --accent-color: #7868ca;
+  --accent-color-two: #a89cf0;
+  --text-color: rgb(243, 243, 243); 
+  --background: #2d313d;
+  --background-accent: #292d38;
+  --container: #393e4e;
+  --container-outline: #252525;
+  --main-shadow: #252525;
+  --lines: #252525;
+  --locks: white;
+  --link-hover: #5d4ea5; 
+  --historycontainer: #484e61;
+
+  --collapsible: #2c2d38;
+  --collapsible-hover: #262831;
+  --collapsible-text: rgb(224, 224, 224);
+  --collapsible-text-hover: white;
+}
+
+input[type=checkbox][disabled]{
+  background: black;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -5,22 +51,26 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; 
+  color: var(--text-color); 
   text-align: center;
-  background: #f0f0f0;
+  /*background: var(--background);*/
   max-width: 100%;
   height: 100%;
   max-width: 50em;
   margin: 0em auto 0em auto;
+  background-color: var(--background);
+  opacity: 1;
+  background: radial-gradient(circle, transparent 20%, var(--background) 20%, var(--background) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--background) 20%, var(--background) 80%, transparent 80%, transparent) 55px 55px, linear-gradient(var(--background-accent) 4.4px, transparent 4.4px) 0 -2.2px, linear-gradient(90deg, var(--background-accent) 4.4px, var(--background) 4.4px) -2.2px 0;
+  background-size: 110px 110px, 110px 110px, 55px 55px, 55px 55px;
 }
 .main{
-  background: white;
+  background: var(--main-color);
   padding: 2em;
   width: auto;
 }
 .charbox, .tfbox {
-  background: #f7f7f7;
-  box-shadow: 0 0 0 1px #e0e0e0;
+  background: var(--container);
+  box-shadow: 0 0 0 1px var(--container-outline);
   padding: 10px;
   border-radius: 5px;
   position: relative;
@@ -33,30 +83,35 @@ body {
   display: inline-block;
   height: 40px;
   padding: 0 30px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
   line-height: 38px;
-  letter-spacing: .1rem;
+  letter-spacing: .05rem;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  border: 1px solid #1d9ed1;
+  border: 1px solid var(--accent-color);
   cursor: pointer;
   box-sizing: border-box; 
-  background: #1d9ed1;
+  background: var(--accent-color);
 }
-button:hover {
+.tweeter:hover{
+  text-decoration: none !important;
+  color: white !important;
+  background: #26262b !important;
+}
+.tweeter:hover, button:hover {
   color: white;
   background: #26262b;
 }
 .copy:active, .tbutt:active {
-  transform: scale(0.9);
+  transform: none;
 }
 .copy:focus, .tbutt:focus {
   outline: none;
   box-shadow: none;
-  background: #1d9ed1;
+  background: var(--accent-color);
 }
 .nonMob{
   display: none;
@@ -65,6 +120,7 @@ button:hover {
   font-size: 9px;
   height: 30px;
   line-height: 30px;
+  border-radius: 5px;
 }
 .tbutt{
   position: fixed;
@@ -72,18 +128,19 @@ button:hover {
   right: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 75px;
+  font-size: 17px;
 }
 a.hitCounter.badge-done0{
   text-indent: 0px !important;
 }
 a {
-  color: #1d9ed1; 
+  color: var(--accent-color); 
   font-weight: bolder;
   text-decoration: none;
 }
 a:hover {
-  color: #0FA0CE; 
+  color: var(--link-hover);
   text-decoration: underline;
 }
 h1{
@@ -92,19 +149,26 @@ h1{
 }
 header{
   text-align: left;
+  position: relative;
 }
 footer{
   background: #26262b;
   margin: 0px -2em -2em -2em; 
-  padding: 2em 0px 2em 0px;
+  padding: 2em 0px 5em 0px;
   color: white;
 }
+.hr{
+    border: 1px solid var(--lines);
+    margin: 15px 0 8px 0;
+}
 .smallhr {
-    width: 15%;
-    border-top: 2px solid #cccccc;
+    width: 30%;
+    border: 1px solid var(--lines);
+    margin: 15px auto 15px auto;
 }
 .paddhr{
-  border: 1px solid white;
+  font-size:0px; 
+  line-height: 18px;
 }
 label{
   -webkit-user-select: none;
@@ -113,8 +177,8 @@ label{
 }
 
 .collapsible {
-  background-color: #d8d8d8;
-  color: rgb(44, 44, 44);
+  background-color: var(--collapsible);
+  color: var(--collapsible-text);
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -126,21 +190,54 @@ label{
 }
 
 .active, .collapsible:hover {
-  background-color: #ccc;
-  color: #444;
+  background-color: var(--collapsible-hover);
+  color:            var(--collapsible-text-hover);
 }
+
+.collapsible i {
+  padding-right: 10px;
+}
+.title{
+  font-size: 30px;
+}
+
+.modetoggle {
+  position: absolute;
+  top: 16px;
+  right: 0px;
+  cursor: pointer;
+}
+
+
+.tfresult b, .charresult b {
+  color: var(--accent-color-two);
+}
+
+
+
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
   padding: 0 18px;
-  background-color: #f7f7f7;
+  background-color: var(--container);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   display: flex;
   flex-wrap: wrap;
   text-align: left;
-  border-left: 3px solid #1EAEDB;
+  border-left: 3px solid var(--accent-color);
+}
+.historycontent{
+  padding: 20px;
+  width: 100%;
+  background-color:var(--historycontainer);
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 0 11px -6px rgba(0,0,0,0.05);
+  
 }
 .collapsible:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */
@@ -157,7 +254,7 @@ label{
   max-width: 100%;
 }
 .column .paddhr{
-  border: 1px solid #f7f7f7;
+  border: 1px solid var(--container);
 }
 .fancy-checkbox{
   position: absolute;
@@ -178,10 +275,10 @@ label{
     display: none;
 }
 .sidenote{
-    color: #1d9ed1;
+    color: var(--accent-color);
     font-weight: bold;
 }
-.discordbot{
+.feedbackform{
   position: static;
   background-color: #2f2f33;
   color: white; 
@@ -191,29 +288,37 @@ label{
   cursor: pointer;
   border-radius: 4px;
 }
-.discordbot:hover{
+.feedbackform:hover{
   text-decoration: none;
   color: white;
-  background-color: #1d9ed1;
+  background-color: var(--accent-color);
 }
 
+input[type=text], select {
+  padding: 8px 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+/* ================================================= */
 /* For Desktop */
+/* ================================================= */
 @media screen and (min-width: 80.625em){
-  .discordbot{
+  .feedbackform{
     display: block;
     position: fixed;
-    width: 200px;
+    width: 175px;
     height: 25px;
-    top: 15px;
+    bottom: 15px;
     right: 15px;
     color: white;
     background-color: #26262b;
   }
-  .discordbot:hover{
+  .feedbackform:hover{
     text-decoration: none;
     color: white;
-    background-color: #1d9ed1;
+    background-color: var(--accent-color);
   }
 
 }
@@ -222,16 +327,16 @@ label{
 @media screen and (min-width: 48em){
 
   body{
-    max-width: 50em;
+    max-width: 52em;
     margin: 0em auto 0em auto;
   }
   .smallhr{
     width: 8%;
-    border-top: 2px solid #cccccc;
+    border: 1px solid var(--lines);
   }
   .main{
-    background: white;
-    box-shadow: 0 0 5px 1px #e0e0e0;
+    background: var(--main-color);
+    box-shadow: 0 0 6px 2px var(--main-shadow);
     padding: 2em;
   }
   .column {
@@ -240,20 +345,38 @@ label{
   }
   .charbox, .tfbox{
     padding-left: 1.6em;
+    padding-right: 1.6em;
   }
   .tbutt{
     position: -webkit-sticky;
     position: sticky;
     bottom: 15px;
-    width: auto;
+    width: 200px;
+    font-size: 14px;
+    height: 50px;
   }
   .copy, .tbutt{
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    background: #1d9ed1;
+    /*border: 1px solid #bbb;*/
+    border-radius: 100px;
+    background: var(--accent-color);
   }
   .nonMob{
     display: block;
+  }
+  footer{
+    padding: 2em 0px 2em 0px;
+  }
+
+  .copy:active, .tbutt:active {
+    transform: scale(0.9);
+  }
+
+  .title{
+    font-size: 35px;
+  }
+
+  .modetoggle {
+    top: 18px;
   }
 }
 
