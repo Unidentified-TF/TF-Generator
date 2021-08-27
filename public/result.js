@@ -506,7 +506,7 @@ function TwitterShare(result){
 
 	//console.log(result);
 
-	document.getElementById("tweet").href = "https://twitter.com/intent/tweet?text=I've been transformed!&hashtags=TFgenerator" + "%0a%0a"+ result;
+	document.getElementById("tweet").href = "https://twitter.com/intent/tweet?text=I've been transformed!&hashtags=TFGenerator" + "%0a%0a"+ result;
 	//document.getElementById("tweet").setAttribute('onclick',"https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator','_blank')")
 }
 //Grabs the latest prompt and saves it
