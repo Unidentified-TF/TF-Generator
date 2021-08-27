@@ -15,19 +15,21 @@
 <body>
   <div class="main">
     <header>
-    <h1>TF GENERATOR</h1>
+    <h1 class="title">TF GENERATOR</h1>
+    <b style="color: var(--accent-color)" id="count"><i>0</i></b>
+    <div class="modetoggle" id="modetoggle"><i class="fas fa-moon" id="toggleicon" title="Light/dark mode"></i></div>
     <!--<a class="hitCounter" target="_blank" title="Pageviews" data-name="a7d35cea580f841dfc4876e380789c4d|6|page|1|#ffffff|#1EAEDB|small|s-hit">Hit Counter</a>-->
-    <script>document.write("<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v="+Date.now()+"'><\/script>");</script>
-    <br><br><hr><br>
+    <!--<script>document.write("<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v="+Date.now()+"'><\/script>");</script>-->
+    <br><br><div class="hr"></div><br>
     </header>
 
     <div class="charbox">
       <b><p id="charactertitle"></p></b>
-      <p id="CHARresult"></p>
+      <p id="CHARresult" class="charresult"></p>
       <!--<input type="checkbox" name="lockchar" id="lockchar" class="lock"><i class="fas fa-lock"></i>-->
       <label class="fancy-checkbox" style="display:none" id="charlock" title="Lock character result?">
         <input type="checkbox" id="lockchar" />
-        <i class="fas fa-lock-open unchecked" style="color: gray;"></i>
+        <i class="fas fa-lock-open unchecked" style="color: var(--locks);"></i>
         <i class="fas fa-lock checked"></i>
       </label>
     </div>
@@ -36,72 +38,84 @@
     
     <div class="tfbox">
       <b><p id="transformtitle"></p></b>
-      <p id="TFresult"></p>
+      <p id="TFresult" class="tfresult"></p>
 
       <label class="fancy-checkbox" style="display:none" id="tflock" title="Lock transformation result?">
         <input type="checkbox" id="locktf" />
-        <i class="fas fa-lock-open unchecked" style="color: gray;"></i>
+        <i class="fas fa-lock-open unchecked" style="color: var(--locks);"></i>
         <i class="fas fa-lock checked"></i>
       </label>
     </div>
 
-    <br><button id="copybutton" onclick="copyButt();" class="copy" style="display:none" title="Copy the reults?"><i class="fas fa-copy"></i> Copy</button>
-    <hr class="paddhr">
+    <br><button id="copybutton" onclick="copyButt();" class="copy" style="display:none" title="Copy the results?"><i class="fas fa-copy"></i> Copy</button>
+    <!--<button id="tweet" onclick="window.open('https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator','_blank')" class="copy" title="Share your result on twitter?"><i class="fab fa-twitter"></i> Tweet</button>
+    -->
+    <a class="copy tweeter" id="tweet" style="display:none" href="https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator" target="_blank" title="Share your result on twitter?"><i class="fab fa-twitter"></i> Tweet</a>
 
-    <hr><br>
+    <br><div class="paddhr">1</div>
 
-    <button type="button" class="collapsible">Character settings</button>
+    <div class="hr"></div><br>
+
+    <button type="button" class="collapsible"><i class="fas fa-user" style="color: var(--accent-color)"></i> Character settings</button>
     <div class="content">
       <div class="column">
         <br><b>Create character</b><br>
-        <label><input type=checkbox id="rand_char" checked><small><i> Creates a random character</i></small></label>
-        <hr class="paddhr">
+        <label><input type=checkbox id="rand_char" checked><small><i> Creates a random character description</i></small></label>
+        <div class="paddhr">1</div>
 
         <b>Character name</b><br>
-        <input type="text" name="charname" placeholder="Leave blank for none" id="charname">
+        <input type="text" name="charname" placeholder="Leave blank for none" id="charname"><br><br>
       </div>
       
       <div class="column">
         <br><b>Gender</b><br>
-        <label><input type="radio" name="gender" value="Female" id="female" checked> Female</label><br>
-        <label><input type="radio" name="gender" value="Male" id="male"> Male</label><br>
-        <label><input type="radio" name="gender" value="Other" id="other" title="Can cause broken results"> Other</label><br><br>
+        <label><input type="radio" name="gender" value="Female" id="female" onclick="TGtip();"> Female</label><br>
+        <label><input type="radio" name="gender" value="Male"   id="male"   onclick="TGtip();"> Male</label><br>
+        <label><input type="radio" name="gender" value="Other"  id="other"  onclick="TGtip();"checked> Other<small><i> (best of both worlds, and everything in between)</i></small></label><br><br>
       </div>
     </div>
 
-    <hr class="paddhr">
+    <div class="paddhr">1</div>
 
-    <button type="button" class="collapsible">Transformation settings</button>
+    <button type="button" class="collapsible"><i class="fas fa-magic" style="color: var(--accent-color)"></i> Transformation settings</button>
     <div class="content">
       <div class="column">
         <br><b>Types of transformations</b><br>
-        <label><input type="checkbox" name="tf" value="animal" id="animal" checked> Animal</label><br>
-        <label><input type="checkbox" name="tf" value="creature" id="creature" checked> Creature</label><br>
+        <label><input type="checkbox" name="tf" value="animal"    id="animal"    checked> Animal</label><br>
+        <label><input type="checkbox" name="tf" value="creature"  id="creature"  checked> Creature</label><br>
         <label><input type="checkbox" name="tf" value="expansion" id="expansion" checked> Expansion</label><br>
-        <label><input type="checkbox" name="tf" value="tg" id="tg" checked> TG*</label><br>
-        <label><input type="checkbox" name="tf" value="weird" id="weird" checked> Body mod / Weird</label><br>
+        <label><input type="checkbox" name="tf" value="bodymod"   id="bodymod"   checked> Body mod</label><br>
         <label><input type="checkbox" name="tf" value="inanimate" id="inanimate" checked> Inanimate</label><br>
-        <label><input type="checkbox" name="tf" value="tffood" id="tffood" checked> Food</label><br>
-        <label><input type="checkbox" name="tf" value="plant" id="plant" checked> Plant</label><br>
-        <label><input type="checkbox" name="tf" value="tfage" id="tfage" checked> Age</label><br>
-        <label><input type="checkbox" name="tf" value="tfpok" id="tfpok" checked> Pokémon / Digimon</label><br>
-        <label><input type="checkbox" name="tf" value="other" id="tfother" checked> Other</label><br>
+        <label><input type="checkbox" name="tf" value="tffood"    id="tffood"    checked> Food</label><br>
+        <label><input type="checkbox" name="tf" value="plant"     id="plant"     checked> Plant</label><br>
+        <label><input type="checkbox" name="tf" value="tfap"      id="tfap"      checked> Age progression</label><br>
+        <label><input type="checkbox" name="tf" value="tfar"      id="tfar"      checked> Age regression</label><br>
+        <label><input type="checkbox" name="tf" value="tfmon"     id="tfmon"     checked> Pokémon / Digimon</label><br>
+        <label><input type="checkbox" name="tf" value="tfchar"    id="tfchar"    checked> Character</label><br>
+        <label><input type="checkbox" name="tf" value="other"     id="tfother"   checked> Other</label><br>
+        ━<br>
+        <label><input type="checkbox" name="tf" value="tg" id="tg"> TG</label><br>
+        <small><i> (For vanilla TG results / scenarios)</i></small><br>
+        <div class="paddhr">1</div>
+        <label><input type="checkbox" name="tf" value="tgres" id="tgres"> Genderbend all transformations</label><br>
+        <small><i id="genderbenddesc"> (e.g. you transform into a <b>female</b> dog)</i></small><br><br>
+        
       </div>
   
       <div class="column">
-        <br><b>Include location</b><br>
-        <label><input type=checkbox id="INCLlocation" checked><small><i> Place of transformation</i></small></label>
-        <hr class="paddhr">
+        <br><b>Include speech change</b><br>
+        <label><input type=checkbox id="INCLspeech" checked><small><i> Speech transformation (e.g. mooing)</i></small></label>
+        <div class="paddhr">1</div>
 
-        <b>Include fate</b><br>
+        <b>Include duration</b><br>
         <label><input type=checkbox id="time-fate" checked><small><i> (e.g. permanent, temporary and etc)</i></small></label>
-        <hr class="paddhr">
+        <div class="paddhr">1</div>
     
         <b>Extra effect</b><br>
         <label><input type=checkbox id="INCLextra" checked><small><i> (e.g. busty, giant, hung and etc)</i></small></label>
-        <hr class="paddhr">
+        <div class="paddhr">1</div>
 
-        <b>Mental / world changes</b> <!--- <small class="sidenote"><i>(experimental)</i></small>--><br>
+        <b>Mental / world changes</b><br>
         <label><input type=checkbox id="mental" checked><small><i> Alters the world or your mind</i></small></label>
         <br><br>
       </div>
@@ -109,24 +123,30 @@
     
     <hr class="smallhr nonMob">
 
-    <button onclick="CreateResults();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
+    <button onclick="CreatePrompt();" id="tfbutton" class="tbutt" title="*notices button* OwO what's this?">Transform!</button>
 
-    <br><hr>
+    <br><div class="hr"></div>
 
     <p>Looking for ideas? Just want to brainstorm, or merely looking for some fun?<br>Then you're at the right place!<br><br>
        Results can be altered in settings, so if you're feeling a bit picky or just want to experiment then go wild!</p>
 
     <hr class="smallhr">
-    
-    <i><p>Contribute and give feedback <a href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank">here</a>!</p></i>
 
+    <button type="button" class="collapsible" id="historytab"><i class="fas fa-history" style="color: var(--accent-color)"></i> History</button>
+    <div class="content" id="historycont">
+      <p id="historydesc" style="text-align: center;width: 100%;">History only records transformations, not characters</p>
+      <hr class="smallhr">
+      <div class="historycontent" id="History1"></div>
+      <div class="historycontent" id="History2"></div>
+      <div class="historycontent" id="History3"></div><br>
+    </div>
+    <br>
+    
     <footer>
-      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020 - Unidentified-TF</small></p><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
-      <p><!--<a class="discordbot" href="https://discord.com/oauth2/authorize?client_id=705577850442481756&scope=bot&permissions=84992"><i class="fab fa-discord" style="font-size: 18px;"></i><b>  Invite to your server!</b></a>--></p><br>
+      <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="http://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a><br><br><small>2020 - Unidentified-TF</small></p><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank">Github</a></small>
+      <p><a class="feedbackform" href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank"><i class="far fa-lightbulb" style="font-size: 18px; padding-right: 6px;"></i><b> Give feedback</b></a></p><br>
     </footer>
     
-    <!--<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check out this cool TF generator that generates random transformation scenarios!&url=https://unidentified-tf.github.io/TF-Generator/&hashtags=TFgenerator">Share</a>-->
-
     <!--Collapsable settings-->
     <script>
       var coll = document.getElementsByClassName("collapsible");
@@ -139,26 +159,60 @@
           if (content.style.maxHeight){
             content.style.maxHeight = null;
           } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = content.scrollHeight;
           } 
         });
       }
+      //hist.classList.toggle("active");
+
+
     </script>
-    <!--Twitter styling
+
+    <!--Dark mode-->
     <script>
-      window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-        t._e = [];
-        t.ready = function(f) {t._e.push(f);};
-        return t;
-      }(document, "script", "twitter-wjs"));
-    </script>-->
+      if (userhistory.getItem("dark") == 1) PutInDark();
+
+
+      var darklighttoggle = document.getElementById("modetoggle");
+
+      darklighttoggle.onclick = function(){
+        document.body.classList.toggle("dark-theme")
+        if(document.body.classList.contains("dark-theme")){
+          document.getElementById("toggleicon").className = "fas fa-sun";
+          userhistory.setItem("dark", 1);
+        }
+        else{
+          document.getElementById("toggleicon").className = "fas fa-moon";
+          userhistory.setItem("dark", 0);
+        }
+     }
+     //Remembers if the user had dark mode the last time
+     function PutInDark() {
+        document.body.classList.add("dark-theme");
+        document.getElementById("toggleicon").className = "fas fa-sun";
+     }
+    </script>
+
+    <script>
+      const counter = document.getElementById("count");
+
+      updateVisitCount();
+
+      function updateVisitCount(){
+        fetch("https://api.countapi.xyz/update/tfgenerator/sitevisits/?amount=1").then(res => res.json()).then(res => { counter.innerHTML = "Visits " + res.value; });
+      }
+    </script>
+
+    <script>
+      var genderbenddesc   = document.getElementById("genderbenddesc");
+
+      TGtip();
+
+      function TGtip(){
+        if(document.getElementById("female").checked) genderbenddesc.innerHTML = "(e.g. you transform into a <b>male</b> dog)";
+        else                                          genderbenddesc.innerHTML = "(e.g. you transform into a <b>female</b> dog)";
+      }
+    </script>
   </div>
 </body>
 </html>
