@@ -24,8 +24,8 @@
   --accent-color: #7868ca;
   --accent-color-two: #a89cf0;
   --text-color: rgb(243, 243, 243); 
-  --background: #2d313d;
-  --background-accent: #292d38;
+  --background: #292d38; /*#2d313d*/
+  --background-accent: #252933; /*#292d38*/
   --container: #393e4e;
   --container-outline: #252525;
   --main-shadow: #252525;
