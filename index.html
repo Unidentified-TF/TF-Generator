@@ -31,254 +31,266 @@
                 <br><br><div class="hr"></div><br>
             </header>
 
-            <!--Character result box-->
-            <div class="result-container">
-                <p class="result-title"><b>Character</b></p>
+            <div>
+                <!--Character result box-->
+                <div class="result-container">
+                    <p class="result-title"><b>Character</b></p>
 
-                <p id="character-result" class="characterresult"></p>
+                    <p id="character-result" class="characterresult"></p>
 
-                <label class="lock-checkbox" style="display: none;" id="character-lock">
-                    <input type="checkbox" id="lock-character-toggle">
-                    <i class="fas fa-lock-open unchecked" title="Lock the character result?"></i>
-                    <i class="fas fa-lock checked" title="Unlock the character result?"></i>
-                </label>
-            </div>
+                    <label class="lock-checkbox" style="display: none;" id="character-lock">
+                        <input type="checkbox" id="lock-character-toggle">
+                        <i class="fas fa-lock-open unchecked" title="Lock the character result?"></i>
+                        <i class="fas fa-lock checked" title="Unlock the character result?"></i>
+                    </label>
+                </div>
 
-            <br>
-            
-            <!--Transformation result box-->
-            <div class="result-container">
-                <p class="result-title"><b>Transformation</b></p>
-
-                <p id="tf-result" class="tfresult"></p>
-
-                <label class="lock-checkbox" style="display: none;" id="tf-lock">
-                    <input type="checkbox" id="lock-tf-toggle">
-                    <i class="fas fa-lock-open unchecked" title="Lock the transformation scenario?"></i>
-                    <i class="fas fa-lock checked" title="Unlock the transformation scenario?"></i>
-                </label>
-            </div>
-
-            <!--Result sharing options-->
-            <div id="result-options">
                 <br>
-                <button id="copybutton" onclick="CopyResult();" class="smallButton" title="Copy your result?" disabled><i class="fas fa-copy"></i> Copy</button>
-                <a class="smallButton disabled" id="tweetbutton" href="" target="_blank" title="Tweet your result?"><i class="fa-brands fa-x-twitter"></i> Tweet</a>
-            </div>
-
-            <div class="hr"></div><br>
-
-            <!--Character settings collapsible-->
-            <button type="button" class="collapsible" title="Click to open the character settings">
-                <i class="fas fa-user" style="color: var(--accent-color);"></i> Character settings
-            </button>
-
-            <div class="content">
-                <!--Character settings: Create character and gender-->
-                <div class="column">
-                    <br><b>Generate character?</b><br>
-
-                    <!--Create character toggle-->
-                    <label class="container">
-                        <small><i> Creates a random description of a character</i></small>
-                        <input type="checkbox" id="create-character" checked> <span class="checkmark"></span>
-                    </label>
-
-                    <div class="paddhr">1</div>
-
-                    <!--Gender setting-->
-                    <b>Gender</b><br>
-
-                    <label class="radio-container container">Female
-                        <input type="radio" name="gender" value="female" id="female">
-                        <span class="radio-checkmark checkmark"></span>
-                    </label>
-                    <label class="radio-container container">Male
-                        <input type="radio" name="gender" value="male" id="male">
-                        <span class="radio-checkmark checkmark"></span>
-                    </label>
-                    <label class="radio-container container">Other
-                        <input type="radio" name="gender" value="person" id="other" checked>
-                        <span class="radio-checkmark checkmark"></span>
-                    </label>
-
-                    <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
-                </div>
                 
-                <!--Character settings: Character name and clothing-->
-                <div class="column">
-                    <!--Name input-->
-                    <br><b>Character name</b><br>
-                    <input type="text" name="charname" placeholder="Leave blank for none" id="charname"><br>
+                <!--Transformation result box-->
+                <div class="result-container">
+                    <p class="result-title"><b>Transformation</b></p>
 
-                    <!--Random name checkbox-->
-                    <label class="container" style="padding-top: 2px;">
-                        <small><i> Set a random name?</i></small>
-                        <input type="checkbox" id="random-name"> <span class="checkmark"></span>
-                    </label>
+                    <p id="tf-result" class="tfresult"></p>
 
-                    <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
-
-                    <!--Clothing checkbox-->
-                    <br><b>Clothing</b><br>
-                    <label class="container">
-                        <small><i> Generate clothing?</i></small>
-                        <input type="checkbox" id="clothing" checked> <span class="checkmark"></span>
+                    <label class="lock-checkbox" style="display: none;" id="tf-lock">
+                        <input type="checkbox" id="lock-tf-toggle">
+                        <i class="fas fa-lock-open unchecked" title="Lock the transformation scenario?"></i>
+                        <i class="fas fa-lock checked" title="Unlock the transformation scenario?"></i>
                     </label>
                 </div>
-            </div>
 
-            <div class="paddhr">1</div>
-
-            <!--Transformation settings collapsible-->
-            <button type="button" class="collapsible" title="Click to open the transformation settings">
-                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-color);"></i> Transformation settings
-            </button>
-            
-            <div class="content">
-                <!--Transformation settings: Transformation categories-->
-                <div class="column">
-                    <br><b>Transformation categories</b> <i class="fa-regular fa-circle-question help-btn" onclick="showModal(true);" title="See more information about the categories"></i><br>
-
-                    <!--Select and unselect all buttons-->
-                    <div class="checkbox-selection">
-                        <span onclick="typeSelection(true)" title="Select all categories?">Select all</span> | 
-                        <span onclick="typeSelection(false)" title="Unselect all categories?">Unselect all</span>
-                    </div>
-
-                    <!--Transformation category checkboxes-->
-                    <div>
-                        <label class="container">Animal
-                            <input type="checkbox" id="A" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Creature
-                            <input type="checkbox" id="C" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Expansion
-                            <input type="checkbox" id="E" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Inanimate
-                            <input type="checkbox" id="I" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Body modification
-                            <input type="checkbox" id="B" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Food
-                            <input type="checkbox" id="F" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Plant
-                            <input type="checkbox" id="P" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Character
-                            <input type="checkbox" id="CR" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Pokémon / Digimon
-                            <input type="checkbox" id="MON" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Age progression
-                            <input type="checkbox" id="AP" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Age regression
-                            <input type="checkbox" id="AR" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Bimbo <small class="nsfwtag"><i>NSFW</i></small>
-                            <input type="checkbox" id="BIMBO" checked> <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Other
-                            <input type="checkbox" id="O" checked> <span class="checkmark"></span>
-                        </label>
-                        <!--Holiday options-->
-                        <div style="padding-top: 1em; display: none;" id="XMAS-option">
-                            <label class="container">Christmas
-                                <input type="checkbox" id="XMAS" tabindex="-1"> <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div style="padding-top: 1em; display: none;" id="HALLOWEEN-option">
-                            <label class="container">Halloween
-                                <input type="checkbox" id="HALLOWEEN" tabindex="-1"> <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
-                </div>
-            
-                <!--Transformation settings: Gender and prompt settings-->
-                <div class="column">
-                    <br><b>Gender options</b><br>
-                    <div style="padding-bottom: 1em;"><small><i>Anything besides "Character's gender" includes TG. If you only want TG prompts, unselect all of the TF categories</i></small></div>
-
-                    <!--Gender selector (for TG)-->
-                    <select id="target-gender">
-                        <option value="char-gender">Character's gender (No TG)</option>
-                        <option value="MTF">MTF</option>
-                        <option value="FTM">FTM</option>
-                        <option value="FUTA">FUTA</option>
-                    </select>
-
-                    <!--Include vanilla TG checkbox
-                    <label class="container" style="padding-top: 2px;">
-                        <small><i> Include vanilla TG results?</i></small>
-                        <input type="checkbox" id="vanilla-tg"> <span class="checkmark"></span>
-                    </label>-->
-
-                    <hr class="hr" style="margin-bottom: 1em;">
-
-                    <!--NSFW toggle-->
-                    <b>NSFW</b><br>
-                    <label class="container">
-                        <small><i>Include adult themes?</i></small>
-                        <input type="checkbox" id="nsfw" checked onchange="turnOffNSFW()"> <span class="checkmark"></span>
-                    </label>
-
-                    <div class="paddhr">1</div>
-                    
-                    <!--Speech toggle-->
-                    <b>Speech</b><br>
-                    <label class="container">
-                        <small><i> Include speech changes? (e.g. "you start mooing")</i></small>
-                        <input type="checkbox" id="speech-toggle" checked> <span class="checkmark"></span>
-                    </label>
-
-                    <div class="paddhr">1</div>
-
-                    <!--Altering toggle-->
-                    <b>Mental / world changes</b><br>
-                    <label class="container">
-                        <small><i> Include changes to the world or your mind?</i></small>
-                        <input type="checkbox" id="altering-toggle" checked> <span class="checkmark"></span>
-                    </label>
+                <!--Result sharing options-->
+                <div id="result-options">
                     <br>
+                    <button id="copybutton" onclick="CopyResult();" class="smallButton" title="Copy your result?" disabled><i class="fas fa-copy"></i> Copy</button>
+                    <a class="smallButton disabled" id="tweetbutton" href="" target="_blank" title="Tweet your result?"><i class="fa-brands fa-x-twitter"></i> Tweet</a>
                 </div>
+
+                <div class="hr"></div><br>
+
+                <!--Character settings collapsible-->
+                <button type="button" class="collapsible" title="Click to open the character settings">
+                    <i class="fas fa-user" style="color: var(--accent-color);"></i> Character settings
+                </button>
+
+                <div class="content">
+                    <!--Character settings: Create character and gender-->
+                    <div class="column">
+                        <br><b>Generate character?</b><br>
+
+                        <!--Create character toggle-->
+                        <label class="container">
+                            <small><i> Creates a random description of a character</i></small>
+                            <input type="checkbox" id="create-character" checked> <span class="checkmark"></span>
+                        </label>
+
+                        <div class="paddhr">1</div>
+
+                        <!--Gender setting-->
+                        <b>Gender</b><br>
+
+                        <label class="radio-container container">Female
+                            <input type="radio" name="gender" value="female" id="female">
+                            <span class="radio-checkmark checkmark"></span>
+                        </label>
+                        <label class="radio-container container">Male
+                            <input type="radio" name="gender" value="male" id="male">
+                            <span class="radio-checkmark checkmark"></span>
+                        </label>
+                        <label class="radio-container container">Other
+                            <input type="radio" name="gender" value="person" id="other" checked>
+                            <span class="radio-checkmark checkmark"></span>
+                        </label>
+
+                        <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
+                    </div>
+                    
+                    <!--Character settings: Character name and clothing-->
+                    <div class="column">
+                        <!--Name input-->
+                        <br><b>Character name</b><br>
+                        <input type="text" name="charname" placeholder="Leave blank for none" id="charname"><br>
+
+                        <!--Random name checkbox-->
+                        <label class="container" style="padding-top: 2px;">
+                            <small><i> Set a random name?</i></small>
+                            <input type="checkbox" id="random-name"> <span class="checkmark"></span>
+                        </label>
+
+                        <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
+
+                        <!--Clothing checkbox-->
+                        <br><b>Clothing</b><br>
+                        <label class="container">
+                            <small><i> Generate clothing?</i></small>
+                            <input type="checkbox" id="clothing" checked> <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="paddhr">1</div>
+
+                <!--Transformation settings collapsible-->
+                <button type="button" class="collapsible" title="Click to open the transformation settings">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-color);"></i> Transformation settings
+                </button>
+                
+                <div class="content">
+                    <!--Transformation settings: Transformation categories-->
+                    <div class="column">
+                        <br><b>Transformation categories</b> <i class="fa-regular fa-circle-question help-btn" onclick="showModal(true);" title="See more information about the categories"></i><br>
+
+                        <!--Select and unselect all buttons-->
+                        <div class="checkbox-selection">
+                            <span onclick="typeSelection(true)" title="Select all categories?">Select all</span> | 
+                            <span onclick="typeSelection(false)" title="Unselect all categories?">Unselect all</span>
+                        </div>
+
+                        <!--Transformation category checkboxes-->
+                        <div>
+                            <label class="container">Animal
+                                <input type="checkbox" id="A" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Creature
+                                <input type="checkbox" id="C" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Expansion
+                                <input type="checkbox" id="E" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Inanimate
+                                <input type="checkbox" id="I" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Body modification
+                                <input type="checkbox" id="B" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Food
+                                <input type="checkbox" id="F" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Plant
+                                <input type="checkbox" id="P" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Character
+                                <input type="checkbox" id="CR" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Pokémon / Digimon
+                                <input type="checkbox" id="MON" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Age progression
+                                <input type="checkbox" id="AP" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Age regression
+                                <input type="checkbox" id="AR" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Bimbo <small class="nsfwtag"><i>NSFW</i></small>
+                                <input type="checkbox" id="BIMBO" checked> <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Other
+                                <input type="checkbox" id="O" checked> <span class="checkmark"></span>
+                            </label>
+                            <!--Holiday options-->
+                            <div style="padding-top: 1em; display: none;" id="XMAS-option">
+                                <label class="container">Christmas
+                                    <input type="checkbox" id="XMAS" tabindex="-1"> <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div style="padding-top: 1em; display: none;" id="HALLOWEEN-option">
+                                <label class="container">Halloween
+                                    <input type="checkbox" id="HALLOWEEN" tabindex="-1"> <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <hr class="hr showOnMobile" style="margin: 15px 0 0 0;">
+                    </div>
+                
+                    <!--Transformation settings: Gender and prompt settings-->
+                    <div class="column">
+                        <br><b>Gender options</b><br>
+                        <div style="padding-bottom: 1em;"><small><i>Anything besides "Character's gender" includes TG. If you only want TG prompts, unselect all of the TF categories</i></small></div>
+
+                        <!--Gender selector (for TG)-->
+                        <select id="target-gender">
+                            <option value="char-gender">Character's gender (No TG)</option>
+                            <option value="MTF">MTF</option>
+                            <option value="FTM">FTM</option>
+                            <option value="FUTA">FUTA</option>
+                        </select>
+
+                        <!--Include vanilla TG checkbox
+                        <label class="container" style="padding-top: 2px;">
+                            <small><i> Include vanilla TG results?</i></small>
+                            <input type="checkbox" id="vanilla-tg"> <span class="checkmark"></span>
+                        </label>-->
+
+                        <hr class="hr" style="margin-bottom: 1em;">
+
+                        <!--NSFW toggle-->
+                        <b>NSFW</b><br>
+                        <label class="container">
+                            <small><i>Include adult themes?</i></small>
+                            <input type="checkbox" id="nsfw" checked onchange="turnOffNSFW()"> <span class="checkmark"></span>
+                        </label>
+
+                        <div class="paddhr">1</div>
+                        
+                        <!--Speech toggle-->
+                        <b>Speech</b><br>
+                        <label class="container">
+                            <small><i> Include speech changes? (e.g. "you start mooing")</i></small>
+                            <input type="checkbox" id="speech-toggle" checked> <span class="checkmark"></span>
+                        </label>
+
+                        <div class="paddhr">1</div>
+
+                        <!--Altering toggle-->
+                        <b>Mental / world changes</b><br>
+                        <label class="container">
+                            <small><i> Include changes to the world or your mind?</i></small>
+                            <input type="checkbox" id="altering-toggle" checked> <span class="checkmark"></span>
+                        </label>
+                        <br>
+                    </div>
+                </div>
+                
+                <div class="smallhr"></div>
+
+                <!--Description-->
+                <p>
+                    Are you feeling adventurous, curious, or creative? Do you want to explore the possibilities of transforming into something else? Well then you're at the right place!
+                    <br><br>
+                    Just choose the settings above and let the generator do the rest!
+                </p>
+
+                <div class="smallhr"></div>
+
+                <!--History-->
+                <button type="button" class="collapsible" id="historytab" title="Click to open the history menu">
+                    <i class="fas fa-history" style="color: var(--accent-color);"></i> History
+                </button>
+
+                <div class="content history" id="historycont">
+                    <div><br><p id="history-description" style="text-align: center; width: 100%; margin: 0;">No history...</p></div>
+                    
+                    <button id="clear-history-btn" onclick="ClearHistory();" style="display: none; margin: 0 auto;" class="smallButton" title="Clear your TF history?"><i class="fa-solid fa-trash-can"></i> Clear history</button>
+                    
+                    <div class="historycontent" id="History1"></div>
+                    <div class="historycontent" id="History2"></div>
+                    <div class="historycontent" id="History3"></div>
+                </div>
+
+                <br>
             </div>
             
-            <div class="smallhr"></div>
-
-            <!--Description-->
-            <p>
-                Are you feeling adventurous, curious, or creative? Do you want to explore the possibilities of transforming into something else? Well then you're at the right place!
-                <br><br>
-                Just choose the settings above and let the generator do the rest!
-            </p>
-
-            <div class="smallhr"></div>
-
-            <!--History-->
-            <button type="button" class="collapsible" id="historytab" title="Click to open the history menu">
-                <i class="fas fa-history" style="color: var(--accent-color);"></i> History
-            </button>
-
-            <div class="content history" id="historycont">
-                <div><br><p id="history-description" style="text-align: center; width: 100%; margin: 0;">No history...</p></div>
-                
-                <button id="clear-history-btn" onclick="ClearHistory();" style="display: none; margin: 0 auto;" class="smallButton" title="Clear your TF history?"><i class="fa-solid fa-trash-can"></i> Clear history</button>
-                
-                <div class="historycontent" id="History1"></div>
-                <div class="historycontent" id="History2"></div>
-                <div class="historycontent" id="History3"></div>
-            </div>
-
-            <br>
+            <!--Footer-->
+            <footer>
+                <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="https://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020-2024 - Unidentified-TF</small></p><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank"><i class="fa-brands fa-github"></i> Github</a></small>
+                <p><a class="feedbackButton" href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank" title="Send feedback about the generator?"><i class="far fa-lightbulb" style="font-size: 18px; padding-right: 6px;"></i><b> Give feedback</b></a></p><br>
+                <div class="tf-button-container">
+                    <button onclick="CreatePrompt();" class="tfButton" title="*notices button* OwO what's this?">Transform!</button>
+                </div>
+                <br>
+            </footer>
 
             <!--Information modal-->
             <div id="modal" style="display: none;">
@@ -321,16 +333,6 @@
                 </div>
                 <div id="modal-background" onclick="showModal(false);"></div>
             </div>
-            
-            <!--Footer-->
-            <footer>
-                <p><a href="https://www.deviantart.com/unidentified-tf" target="_blank">Deviantart</a> | <a href="https://www.furaffinity.net/user/unidentified-tf/" target="_blank">Furaffinity</a> | <a href="https://twitter.com/UnidentifiedTF" target="_blank">Twitter</a> | <a href="https://www.patreon.com/unidentifiedtf" target="_blank">Patreon</a><br><br><small>2020-2023 - Unidentified-TF</small></p><small><a href="https://github.com/Unidentified-TF/TF-Generator" target="_blank"><i class="fa-brands fa-github"></i> Github</a></small>
-                <p><a class="feedbackButton" href="https://forms.gle/DbJgrzru7vn83p9o9" target="_blank" title="Send feedback about the generator?"><i class="far fa-lightbulb" style="font-size: 18px; padding-right: 6px;"></i><b> Give feedback</b></a></p><br>
-                <div class="tf-button-container">
-                    <button onclick="CreatePrompt();" class="tfButton" title="*notices button* OwO what's this?">Transform!</button>
-                </div>
-                <br>
-            </footer>
 
             <!--Unchecks selected categories if NSFW is turned off-->
             <script>

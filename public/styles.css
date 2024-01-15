@@ -26,6 +26,7 @@
   --border-r: 5px;
   --gray: #808080;
   --small-color: #303030;
+  --external-btn: #18191c;
 }
 
 .dark-theme {
@@ -55,7 +56,19 @@
   --small-color: #a7a7a7;
 }
 
-input[type=text], select {
+input[type=text],
+select {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  margin: 4px 0;
+  font-size: 0.875em;
+  border-radius: var(--border-r);
+  box-sizing: border-box;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+}
+
+/*input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -63,7 +76,7 @@ input[type=text], select {
   border: 1px solid var(--input-border);
   border-radius: var(--border-r);
   background-color: var(--input-bg);
-}
+}*/
 
 input[type=text]:focus, select:focus {
   outline: 1px solid var(--accent-color);
@@ -97,7 +110,7 @@ header {
 
 footer {
   background: #1e1f22;
-  margin: 0 -1.5em -2em -1.5em;
+  margin: auto -1.5em -2em -1.5em;
   padding: 2em 1em;
   color: var(--gray);
 }
@@ -107,6 +120,8 @@ footer {
   padding: 1.5em;
   width: auto;
   min-height: calc(100vh - 4em);
+  display: flex;
+  flex-direction: column;
 }
 
 .result-container {
@@ -116,7 +131,7 @@ footer {
   border-radius: var(--border-r);
   position: relative;
   text-align: left;
-  font-size: 15.5px;
+  font-size: 1em;
 }
 
 /* BUTTONS */
@@ -174,7 +189,7 @@ button.smallButton:not(:disabled):hover, a.smallButton:not(.disabled):hover, .tf
 
 .feedbackButton {
   position: static;
-  background-color: var(--background-accent);
+  background-color: var(--external-btn);
   color: white;
   white-space: nowrap;
   cursor: pointer;
@@ -266,7 +281,7 @@ small:not(.nsfwtag) > i {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 0.94em;
   font-weight: bold;
   border-radius: var(--border-r);
 }
@@ -315,7 +330,7 @@ small:not(.nsfwtag) > i {
   background-color: var(--historycontainer);
   border-radius: var(--border-r);
   border: 1px solid var(--border-color);
-  font-size: 15.5px;
+  font-size: 0.97em;
   line-height: 1.5;
   box-shadow: 0 0 11px -6px rgba(0, 0, 0, 0.05);
 }
@@ -336,13 +351,6 @@ label {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-input[type=text],
-select {
-  padding: 6px 6px;
-  margin: 4px 0;
-  border-radius: var(--border-r);
 }
 
 /* LOCKS */
@@ -399,7 +407,7 @@ select {
 
 .checkbox-selection {
   display: flex;
-  font-size: 14px;
+  font-size: 0.875em;
   gap: 10px;
   color: var(--gray);
   padding-bottom: 1em;
@@ -414,7 +422,7 @@ select {
 
 .result-title, .historycontent h3 {
   color: #808080;
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .historycontent h3 {
@@ -438,7 +446,7 @@ CUSTOM CHECKBOXES
 .container {
   display: block;
   position: relative;
-  padding-left: 30px;
+  padding-left: 1.875em;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -465,8 +473,8 @@ CUSTOM CHECKBOXES
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 1.25em;
+  width: 1.25em;
   border-radius: var(--border-r);
   background-color: var(--input-bg);
   border: 1px solid var(--input-border);
@@ -505,10 +513,10 @@ CUSTOM CHECKBOXES
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 6px;
-  top: 3px;
-  width: 4px;
-  height: 8px;
+  left: 0.4em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
@@ -517,10 +525,10 @@ CUSTOM CHECKBOXES
 }
 
 .radio-container .checkmark:after {
-  top: 6px;
-  left: 6px;
-  width: 5px;
-  height: 5px;
+  top: 0.4em;
+  left: 0.4em;
+  width: 0.313em;
+  height: 0.313em;
   border-radius: 50%;
   background: white;
 }
@@ -645,7 +653,7 @@ BREAKPOINTS
 
   footer { 
     padding: 2em 0 1em 0; 
-    margin: 0 -2em -2em -2em;
+    margin: auto -2em -2em -2em;
   }
 
   .result-container {
@@ -678,8 +686,8 @@ BREAKPOINTS
   .tfButton {
     position: initial;
     width: 20em;
-    font-size: 14px;
-    height: 50px;
+    font-size: 0.875em;
+    height: 3.55em;
   }
 
   .feedbackButton {
@@ -694,7 +702,7 @@ BREAKPOINTS
 
   /* OTHER */
 
-  h1 { font-size: 35px; }
+  h1 { font-size: 2.2em; }
 
   .hideOnMobile { display: block; }
 
